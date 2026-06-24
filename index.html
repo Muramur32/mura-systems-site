@@ -1,0 +1,1240 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mura Systems — боты, лендинги и автоматизация для бизнеса</title>
+  <meta name="description" content="Telegram-боты, VK-боты, MAX-боты, лендинги и индивидуальные решения для заявок, записи, продаж и автоматизации малого бизнеса.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f6f1e8;
+      --bg2:#efe6d8;
+      --paper:#fffaf2;
+      --white:#ffffff;
+      --ink:#172033;
+      --soft:#34405c;
+      --muted:#6f756f;
+      --muted2:#9a998f;
+      --line:rgba(23,32,51,.10);
+      --line2:rgba(23,32,51,.17);
+
+      --blue:#2357ff;
+      --blue2:#1744d9;
+      --navy:#203a70;
+      --aqua:#3fcbbd;
+      --mint:#dff8ed;
+      --sand:#eadfcb;
+      --orange:#ff8b45;
+      --lav:#eeeaff;
+
+      --radius:30px;
+      --radius2:44px;
+      --max:1180px;
+      --shadow:0 24px 70px rgba(54,45,32,.10);
+      --shadow2:0 36px 100px rgba(35,87,255,.15);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+    body{
+      font-family:"Wix Madefor Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 12% 4%,rgba(35,87,255,.13),transparent 28%),
+        radial-gradient(circle at 88% 0%,rgba(63,203,189,.18),transparent 28%),
+        radial-gradient(circle at 45% 34%,rgba(255,139,69,.08),transparent 32%),
+        linear-gradient(180deg,var(--bg),#fbf8f1 44%,var(--bg));
+      line-height:1.5;
+      overflow-x:hidden;
+    }
+    body:before{
+      content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.52;
+      background-image:linear-gradient(rgba(23,32,51,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(23,32,51,.035) 1px,transparent 1px);
+      background-size:64px 64px;
+      mask-image:linear-gradient(to bottom,#000,transparent 72%);
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(var(--max),calc(100% - 40px));margin:0 auto}
+
+    .topbar{
+      position:sticky;top:0;z-index:20;
+      background:rgba(246,241,232,.80);
+      backdrop-filter:blur(22px);
+      border-bottom:1px solid rgba(23,32,51,.08);
+    }
+    .nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+    .brand{display:flex;align-items:center;gap:12px;font-size:19px;font-weight:700;letter-spacing:-.01em}
+    .brand-mark{
+      width:40px;height:40px;border-radius:14px;position:relative;
+      background:radial-gradient(circle at 30% 25%,rgba(255,255,255,.92),transparent 17%),linear-gradient(135deg,var(--blue),var(--aqua));
+      box-shadow:0 18px 42px rgba(35,87,255,.22);
+    }
+    .brand-mark:after{content:"";position:absolute;right:8px;bottom:8px;width:13px;height:13px;border-radius:50%;background:var(--ink);border:2px solid rgba(255,255,255,.86)}
+    .nav-links{display:flex;gap:24px;color:var(--muted);font-size:14px;font-weight:500}
+    .nav-links a:hover{color:var(--ink)}
+
+    .btn{
+      min-height:54px;display:inline-flex;align-items:center;justify-content:center;padding:0 24px;border-radius:999px;
+      border:1px solid transparent;font-size:15px;font-weight:500;white-space:nowrap;transition:.22s ease;line-height:1;
+    }
+    .btn:hover{transform:translateY(-2px)}
+    .btn-blue{background:linear-gradient(135deg,var(--blue),var(--blue2));color:white;box-shadow:0 18px 48px rgba(35,87,255,.24)}
+    .btn-light{background:rgba(255,255,255,.68);border-color:var(--line);color:var(--ink)}
+    .btn-light:hover{background:white;border-color:var(--line2)}
+    .btn-aqua{background:linear-gradient(135deg,#e9fffb,#c9f8ef);color:var(--navy);border-color:rgba(63,203,189,.28)}
+
+    .hero{padding:88px 0 66px}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);gap:50px;align-items:center}
+    .pill{
+      width:max-content;display:inline-flex;align-items:center;gap:10px;min-height:42px;padding:0 15px;border-radius:999px;
+      background:rgba(255,255,255,.70);border:1px solid var(--line);color:var(--muted);font-size:14px;font-weight:700;
+    }
+    .pill:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--aqua);box-shadow:0 0 0 6px rgba(63,203,189,.13)}
+    h1,h2,h3{letter-spacing:0}
+    h1{max-width:860px;margin-top:24px;font-size:clamp(43px,6vw,74px);line-height:1.06;font-weight:700}
+    h1 span{color:var(--blue)}
+    .hero-text{max-width:730px;margin-top:26px;color:var(--muted);font-size:20px;line-height:1.68;font-weight:500}
+    .hero-text strong{color:var(--ink);font-weight:700}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+    .hero-points{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+    .point{
+      min-height:36px;display:inline-flex;align-items:center;gap:9px;padding:0 13px;border-radius:999px;
+      background:rgba(255,255,255,.58);border:1px solid var(--line);color:var(--muted);font-size:13px;font-weight:500;
+    }
+    .point:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--blue)}
+
+    .visual{position:relative;min-height:630px}
+    .visual-card{
+      position:absolute;inset:0;overflow:hidden;border-radius:54px;
+      background:radial-gradient(circle at 85% 10%,rgba(35,87,255,.15),transparent 30%),radial-gradient(circle at 5% 88%,rgba(63,203,189,.17),transparent 30%),linear-gradient(145deg,rgba(255,255,255,.82),rgba(255,255,255,.50));
+      border:1px solid rgba(23,32,51,.09);box-shadow:var(--shadow);
+    }
+    .visual-card:before{
+      content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(23,32,51,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(23,32,51,.045) 1px,transparent 1px);
+      background-size:54px 54px;mask-image:radial-gradient(circle at 50% 32%,#000,transparent 76%);
+    }
+    .visual-inner{position:relative;z-index:2;height:100%;padding:30px;display:grid;align-content:space-between;gap:22px}
+    .stat-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .stat,.mini-panel{
+      padding:18px;border-radius:26px;background:rgba(255,255,255,.76);border:1px solid rgba(23,32,51,.08);box-shadow:0 12px 36px rgba(23,32,51,.05);
+    }
+    .stat strong{display:block;font-size:34px;line-height:1;font-weight:700;margin-bottom:8px;color:var(--blue)}
+    .stat span,.mini-label{color:var(--muted);font-size:13px;font-weight:500}
+
+    .phone{width:min(380px,92%);margin:0 auto;padding:13px;border-radius:42px;background:linear-gradient(145deg,#253760,#172033);box-shadow:0 34px 90px rgba(32,58,112,.20);transform:rotate(-1.4deg)}
+    .screen{min-height:475px;padding:18px;border-radius:31px;background:radial-gradient(circle at 92% 0%,rgba(63,203,189,.16),transparent 30%),#fbf8f1;overflow:hidden}
+    .screen-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+    .bot-info{display:flex;align-items:center;gap:12px}
+    .avatar{
+      width:46px;height:46px;border-radius:16px;position:relative;
+      background:radial-gradient(circle at 30% 25%,rgba(255,255,255,.9),transparent 18%),linear-gradient(135deg,var(--blue),var(--aqua));
+    }
+    .avatar:after{content:"";position:absolute;right:8px;bottom:8px;width:12px;height:12px;border-radius:50%;background:var(--ink);border:2px solid white}
+    .bot-title{font-weight:700}.bot-sub{color:var(--muted);font-size:12px;font-weight:500}
+    .online{width:10px;height:10px;border-radius:50%;background:#29c46a;box-shadow:0 0 0 6px rgba(41,196,106,.12)}
+    .message{margin-top:10px;padding:14px 15px;border-radius:18px;background:white;border:1px solid rgba(23,32,51,.08);color:var(--soft);font-size:14px;font-weight:500}
+    .message.primary{background:var(--blue);color:white;border:0}
+    .button-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:12px}
+    .mini-btn{min-height:45px;display:grid;place-items:center;border-radius:15px;background:#eef3f8;color:var(--ink);font-size:13px;font-weight:500}
+    .pipeline{display:grid;gap:10px;margin-top:18px}
+    .pipeline-item{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:13px;font-weight:500}
+    .pipeline-item:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--aqua)}
+    .bottom-panels{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}
+    .mini-label{text-transform:uppercase;letter-spacing:.08em;margin-bottom:16px}
+    .bars{display:grid;gap:9px}.bar{height:8px;border-radius:999px;background:rgba(23,32,51,.08);overflow:hidden}.bar span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,var(--blue),var(--aqua))}
+    .status{min-height:44px;display:grid;place-items:center;border-radius:999px;background:var(--navy);color:white;font-size:14px;font-weight:700}
+
+    section{padding:74px 0}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:34px;margin-bottom:30px}
+    .eyebrow{margin-bottom:13px;color:var(--blue);font-size:12px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+    h2{max-width:860px;font-size:clamp(34px,4.4vw,60px);line-height:1.07;font-weight:700}
+    .section-text{max-width:470px;color:var(--muted);font-size:17px;line-height:1.65;font-weight:500}
+
+    .bento{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .card{
+      position:relative;min-height:254px;overflow:hidden;padding:28px;border-radius:var(--radius);
+      background:rgba(255,255,255,.66);border:1px solid rgba(23,32,51,.08);box-shadow:var(--shadow);transition:.22s ease;
+    }
+    .card:hover{transform:translateY(-4px);background:rgba(255,255,255,.88);border-color:rgba(23,32,51,.16)}
+    .card.large{grid-column:span 6;min-height:334px}.card.medium{grid-column:span 4}.card.small{grid-column:span 3;min-height:224px}.card.wide{grid-column:span 12;min-height:292px}
+    .card-tag{color:var(--muted2);font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-bottom:30px}
+    .card h3{max-width:540px;margin-bottom:13px;font-size:30px;line-height:1.1;font-weight:700}
+    .card p{max-width:590px;color:var(--muted);font-size:16px;line-height:1.6;font-weight:500}
+    .symbol{display:none}
+    .symbol:before,.symbol:after{display:none}
+    .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:24px}
+    .chip{min-height:34px;display:inline-flex;align-items:center;padding:0 12px;border-radius:999px;background:rgba(35,87,255,.08);color:var(--blue2);font-size:13px;font-weight:500}
+
+    .intro-block{
+      padding:40px;border-radius:var(--radius2);background:linear-gradient(135deg,rgba(255,255,255,.82),rgba(255,255,255,.56));border:1px solid rgba(23,32,51,.08);box-shadow:var(--shadow);
+      margin-bottom:18px;
+    }
+    .intro-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;margin-top:24px}
+    .intro-item{padding:22px;border-radius:24px;background:rgba(255,255,255,.68);border:1px solid rgba(23,32,51,.08)}
+    .intro-item strong{display:block;font-size:18px;margin-bottom:8px}.intro-item span{display:block;color:var(--muted);font-size:14.5px;line-height:1.55}
+
+    .telegram-line{margin-top:26px}
+    .bot-card{
+      display:grid;grid-template-columns:1fr;gap:16px;padding:28px;border-radius:var(--radius);background:rgba(255,255,255,.68);border:1px solid rgba(23,32,51,.08);box-shadow:var(--shadow);
+    }
+    .bot-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}
+    .bot-head h3{font-size:28px;line-height:1.1}
+    .bot-head p{margin-top:10px;color:var(--muted);font-size:15.5px;line-height:1.6;max-width:650px}
+    .bot-badge{min-height:34px;display:inline-flex;align-items:center;padding:0 12px;border-radius:999px;background:var(--mint);color:#16725f;font-size:13px;font-weight:700;white-space:nowrap}
+    .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:4px}
+    .tier{padding:15px;border-radius:18px;background:rgba(35,87,255,.055);border:1px solid rgba(35,87,255,.10)}
+    .tier strong{display:block;font-size:14px;color:var(--blue);margin-bottom:7px}.tier span{display:block;color:var(--muted);font-size:13.5px;line-height:1.45}
+
+    .dark-section{
+      margin:42px 0;padding:48px;border-radius:44px;color:white;
+      background:radial-gradient(circle at 82% 8%,rgba(63,203,189,.22),transparent 30%),radial-gradient(circle at 12% 90%,rgba(35,87,255,.22),transparent 32%),linear-gradient(145deg,#24385f,#1c2d4e);
+      box-shadow:0 36px 100px rgba(32,58,112,.22);
+    }
+    .dark-section .eyebrow{color:#94fff0}.dark-section h2{color:white}.dark-section .section-text{color:rgba(255,255,255,.74)}
+    .dark-section .card{color:white;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14);box-shadow:none}
+    .dark-section .card:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.22)}
+    .dark-section .card p,.dark-section .card-tag{color:rgba(255,255,255,.72)}
+    .dark-section .chip{background:rgba(255,255,255,.10);color:rgba(255,255,255,.84)}
+
+    
+    .pricing{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+      align-items:stretch;
+    }
+
+    .price-card{
+      position:relative;
+      display:flex;
+      flex-direction:column;
+      min-height:560px;
+      padding:30px 28px 28px;
+      border-radius:34px;
+      background:linear-gradient(180deg,rgba(255,255,255,.90),rgba(255,255,255,.74));
+      border:1px solid rgba(23,32,51,.08);
+      box-shadow:0 20px 54px rgba(54,45,32,.08);
+      transition:.22s ease;
+      overflow:hidden;
+      color:var(--ink);
+    }
+
+    .price-card:hover{
+      transform:translateY(-4px);
+      border-color:rgba(23,32,51,.14);
+      box-shadow:0 28px 70px rgba(54,45,32,.11);
+    }
+
+    .price-card:before{
+      content:"";
+      position:absolute;
+      left:28px;
+      right:28px;
+      top:0;
+      height:3px;
+      border-radius:0 0 999px 999px;
+      background:linear-gradient(90deg,rgba(35,87,255,.20),rgba(63,203,189,.26));
+    }
+
+    .price-label{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      align-self:flex-start;
+      min-height:32px;
+      padding:0 12px;
+      border-radius:999px;
+      background:rgba(35,87,255,.09);
+      color:var(--blue);
+      font-size:13px;
+      font-weight:600;
+      letter-spacing:0;
+    }
+
+    .price-card h3{
+      margin-top:18px;
+      min-height:64px;
+      font-size:25px;
+      line-height:1.18;
+      font-weight:600;
+      letter-spacing:0;
+      color:var(--ink);
+    }
+
+    /* Force the Business title onto one line */
+    .pricing .price-card:nth-child(2) h3{
+      white-space:nowrap;
+      font-size:22px;
+    }
+
+    .price{
+      margin-top:16px;
+      min-height:90px;
+      font-size:36px;
+      line-height:1.05;
+      font-weight:700;
+      letter-spacing:0;
+      color:var(--ink);
+    }
+
+    .price small{
+      display:block;
+      margin-top:10px;
+      color:var(--muted);
+      font-size:14px;
+      font-weight:500;
+      line-height:1.4;
+      letter-spacing:0;
+    }
+
+    .price-desc{
+      min-height:188px;
+      margin-top:14px;
+      color:var(--muted);
+      font-size:15.5px;
+      line-height:1.62;
+      font-weight:400;
+    }
+
+    .features{
+      list-style:none;
+      display:grid;
+      gap:13px;
+      margin-top:auto;
+      padding-top:22px;
+      border-top:1px solid rgba(23,32,51,.10);
+    }
+
+    .features li{
+      display:flex;
+      gap:10px;
+      color:var(--soft);
+      font-size:14.5px;
+      line-height:1.5;
+      font-weight:500;
+    }
+
+    .features li:before{
+      content:"";
+      flex:0 0 7px;
+      width:7px;
+      height:7px;
+      margin-top:8px;
+      border-radius:50%;
+      background:var(--blue);
+    }
+
+.process{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+    .step{min-height:238px;padding:24px;border-radius:22px;background:rgba(255,255,255,.68);border:1px solid rgba(23,32,51,.08);box-shadow:0 14px 42px rgba(42,34,22,.06)}
+    .step-num{width:46px;height:46px;display:grid;place-items:center;margin-bottom:22px;border-radius:16px;background:var(--blue);color:white;font-size:13px;font-weight:700}
+    .step h3{font-size:20px;margin-bottom:9px;font-weight:700}.step p{color:var(--muted);font-size:14.5px;line-height:1.55;font-weight:500}
+
+    .cta{
+      overflow:hidden;padding:58px;border-radius:48px;text-align:center;
+      background:radial-gradient(circle at 85% 10%,rgba(35,87,255,.14),transparent 30%),linear-gradient(135deg,rgba(255,255,255,.88),rgba(255,255,255,.58));
+      border:1px solid rgba(23,32,51,.08);box-shadow:var(--shadow);
+    }
+    .cta h2{margin:0 auto}.cta p{max-width:740px;margin:20px auto 30px;color:var(--muted);font-size:18px;line-height:1.65;font-weight:500}
+    .cta-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+    .footer{padding:34px 0 46px;color:var(--muted);font-size:14px;font-weight:500}
+    .footer-line{display:flex;justify-content:space-between;gap:18px;align-items:center;padding-top:24px;border-top:1px solid var(--line)}
+
+    @media(max-width:1060px){
+      .hero-grid{grid-template-columns:1fr}.visual{min-height:620px}.pricing{grid-template-columns:repeat(2,1fr)}
+      .card.large,.card.medium,.card.small,.card.wide{grid-column:span 6}.process{grid-template-columns:repeat(2,1fr)}.nav-links{display:none}.intro-grid,.tiers{grid-template-columns:1fr}
+    }
+    @media(max-width:720px){
+      .container{width:min(100% - 26px,var(--max))}.nav{min-height:70px}.brand{font-size:18px}.nav .btn{display:none}
+      .hero{padding:52px 0 42px}.hero-grid{gap:34px}
+      h1{font-size:clamp(38px,11.2vw,56px);line-height:1.1;letter-spacing:0}.hero-text{font-size:17px}
+      .hero-actions,.cta-actions{flex-direction:column}.btn{width:100%}
+      .visual{min-height:auto}.visual-card{position:relative;border-radius:36px}.visual-inner{padding:18px}
+      .stat-row,.bottom-panels{grid-template-columns:1fr}.phone{width:100%;transform:none}
+      section{padding:52px 0}.section-head{display:block}.section-text{margin-top:15px}
+      h2{font-size:clamp(31px,9.2vw,44px);line-height:1.12;letter-spacing:-.006em}
+      .bento,.pricing,.process{grid-template-columns:1fr}.card.large,.card.medium,.card.small,.card.wide{grid-column:span 1}
+      .pricing .price-card:nth-child(2) h3{white-space:normal;font-size:25px}
+      .price-card h3,.price,.price-desc{min-height:auto}
+      .card,.price-card,.step,.bot-card{border-radius:24px}.symbol{display:none}.dark-section{margin:18px 0;padding:28px 16px;border-radius:34px}.intro-block{padding:26px 18px}
+      .bot-head{display:block}.bot-badge{margin-top:14px}
+      .cta{padding:34px 20px;border-radius:34px}.footer-line{flex-direction:column;align-items:flex-start}
+    }
+
+    /* Premium typography tuning */
+    h1, h2, h3, .price, .brand, .btn {
+      font-synthesis: none;
+    }
+
+    h1 {
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    h2 {
+      font-weight: 650;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    .card h3,
+    .bot-head h3,
+    .step h3 {
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    .card p,
+    .section-text,
+    .hero-text,
+    .price-desc,
+    .step p {
+      font-weight: 400;
+    }
+
+  
+    /* ===== Mobile premium polish ===== */
+    @media (max-width: 860px) {
+      body {
+        overflow-x: hidden;
+        background:
+          radial-gradient(circle at 8% 2%,rgba(35,87,255,.10),transparent 24%),
+          radial-gradient(circle at 92% 0%,rgba(63,203,189,.14),transparent 26%),
+          linear-gradient(180deg,var(--bg),#fbf8f1 48%,var(--bg));
+      }
+
+      .container {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .topbar {
+        position: sticky;
+      }
+
+      .nav {
+        min-height: 66px;
+      }
+
+      .brand {
+        font-size: 17px;
+      }
+
+      .brand-mark {
+        width: 36px;
+        height: 36px;
+        border-radius: 13px;
+      }
+
+      .nav .btn,
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 42px 0 36px;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .pill {
+        max-width: 100%;
+        min-height: 38px;
+        padding: 0 13px;
+        font-size: 13px;
+      }
+
+      h1 {
+        margin-top: 20px;
+        max-width: 100%;
+        font-size: clamp(34px, 10.4vw, 50px);
+        line-height: 1.12;
+        letter-spacing: 0;
+      }
+
+      .hero-text {
+        margin-top: 18px;
+        max-width: 100%;
+        font-size: 16.5px;
+        line-height: 1.62;
+      }
+
+      .hero-actions {
+        margin-top: 26px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .btn {
+        width: 100%;
+        min-height: 52px;
+        padding: 0 18px;
+        font-size: 15px;
+      }
+
+      .hero-points {
+        margin-top: 18px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 9px;
+      }
+
+      .point {
+        width: 100%;
+        justify-content: flex-start;
+        min-height: 34px;
+        padding: 0 12px;
+        font-size: 13px;
+        background: rgba(255,255,255,.68);
+      }
+
+      .visual {
+        min-height: auto;
+      }
+
+      .visual-card {
+        position: relative;
+        border-radius: 32px;
+      }
+
+      .visual-inner {
+        padding: 16px;
+        gap: 16px;
+      }
+
+      .stat-row,
+      .bottom-panels {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .stat,
+      .mini-panel {
+        border-radius: 20px;
+        padding: 15px;
+      }
+
+      .stat strong {
+        font-size: 28px;
+      }
+
+      .phone {
+        width: 100%;
+        padding: 10px;
+        border-radius: 30px;
+        transform: none;
+      }
+
+      .screen {
+        min-height: auto;
+        border-radius: 24px;
+        padding: 14px;
+      }
+
+      .screen-top {
+        align-items: flex-start;
+        margin-bottom: 14px;
+      }
+
+      .bot-info {
+        align-items: center;
+      }
+
+      .avatar {
+        width: 40px;
+        height: 40px;
+        border-radius: 14px;
+      }
+
+      .bot-title {
+        font-size: 14px;
+      }
+
+      .bot-sub {
+        max-width: 210px;
+        font-size: 11.5px;
+        line-height: 1.35;
+      }
+
+      .message {
+        padding: 12px 13px;
+        border-radius: 15px;
+        font-size: 13px;
+        line-height: 1.45;
+      }
+
+      .button-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+      .mini-btn {
+        min-height: 42px;
+        font-size: 12.5px;
+        border-radius: 13px;
+      }
+
+      section {
+        padding: 46px 0;
+      }
+
+      .section-head {
+        display: block;
+        margin-bottom: 22px;
+      }
+
+      .eyebrow {
+        margin-bottom: 10px;
+        font-size: 11px;
+        letter-spacing: .10em;
+      }
+
+      h2 {
+        max-width: 100%;
+        font-size: clamp(29px, 8.7vw, 42px);
+        line-height: 1.12;
+        letter-spacing: 0;
+      }
+
+      .section-text {
+        max-width: 100%;
+        margin-top: 14px;
+        font-size: 15.5px;
+        line-height: 1.62;
+      }
+
+      .bento,
+      .pricing,
+      .process,
+      .intro-grid,
+      .tiers {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .card.large,
+      .card.medium,
+      .card.small,
+      .card.wide {
+        grid-column: span 1;
+      }
+
+      .card {
+        min-height: auto;
+        padding: 22px;
+        border-radius: 24px;
+      }
+
+      .card-tag {
+        margin-bottom: 22px;
+        font-size: 11px;
+        letter-spacing: .10em;
+      }
+
+      .card h3 {
+        max-width: 100%;
+        font-size: 24px;
+        line-height: 1.16;
+        letter-spacing: 0;
+      }
+
+      .card p {
+        max-width: 100%;
+        font-size: 15px;
+        line-height: 1.58;
+      }
+
+      .chips {
+        margin-top: 18px;
+        gap: 8px;
+      }
+
+      .chip {
+        min-height: 32px;
+        padding: 0 10px;
+        font-size: 12.5px;
+      }
+
+      .intro-block {
+        padding: 24px 18px;
+        border-radius: 30px;
+      }
+
+      .intro-item {
+        padding: 18px;
+        border-radius: 20px;
+      }
+
+      .intro-item strong {
+        font-size: 17px;
+      }
+
+      .intro-item span {
+        font-size: 14px;
+      }
+
+      .telegram-line {
+        margin-top: 18px;
+      }
+
+      .bot-card {
+        gap: 14px;
+        padding: 22px;
+        border-radius: 24px;
+      }
+
+      .bot-head {
+        display: block;
+      }
+
+      .bot-head h3 {
+        font-size: 24px;
+        line-height: 1.16;
+      }
+
+      .bot-head p {
+        margin-top: 10px;
+        font-size: 15px;
+        line-height: 1.58;
+      }
+
+      .bot-badge {
+        margin-top: 14px;
+        min-height: 32px;
+        font-size: 12.5px;
+      }
+
+      .tier {
+        padding: 15px;
+        border-radius: 17px;
+      }
+
+      .tier strong {
+        font-size: 14px;
+      }
+
+      .tier span {
+        font-size: 13.5px;
+      }
+
+      .dark-section {
+        margin: 10px 0;
+        padding: 24px 16px;
+        border-radius: 30px;
+      }
+
+      .price-card {
+        min-height: auto;
+        display: block;
+        padding: 24px 22px;
+        border-radius: 24px;
+      }
+
+      .price-card:before {
+        left: 22px;
+        right: 22px;
+      }
+
+      .price-label {
+        min-height: 31px;
+        font-size: 12.5px;
+      }
+
+      .price-card h3,
+      .pricing .price-card:nth-child(2) h3 {
+        min-height: auto;
+        margin-top: 18px;
+        white-space: normal;
+        font-size: 24px;
+        line-height: 1.16;
+      }
+
+      .price {
+        min-height: auto;
+        margin-top: 15px;
+        font-size: 34px;
+        line-height: 1.06;
+      }
+
+      .price small {
+        margin-top: 9px;
+        font-size: 13.5px;
+      }
+
+      .price-desc {
+        min-height: auto;
+        margin-top: 16px;
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .features {
+        margin-top: 22px;
+        padding-top: 20px;
+        gap: 11px;
+      }
+
+      .features li {
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .step {
+        min-height: auto;
+        padding: 20px;
+        border-radius: 22px;
+      }
+
+      .step-num {
+        width: 42px;
+        height: 42px;
+        margin-bottom: 18px;
+        border-radius: 14px;
+      }
+
+      .step h3 {
+        font-size: 19px;
+      }
+
+      .step p {
+        font-size: 14.5px;
+      }
+
+      .cta {
+        padding: 30px 18px;
+        border-radius: 30px;
+      }
+
+      .cta p {
+        margin-top: 16px;
+        font-size: 16px;
+        line-height: 1.62;
+      }
+
+      .cta-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .footer {
+        padding: 26px 0 36px;
+      }
+
+      .footer-line {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .container {
+        width: min(100% - 22px, var(--max));
+      }
+
+      h1 {
+        font-size: clamp(32px, 10vw, 44px);
+      }
+
+      h2 {
+        font-size: clamp(27px, 8.4vw, 38px);
+      }
+
+      .card,
+      .bot-card,
+      .price-card {
+        padding: 20px;
+      }
+
+      .phone {
+        padding: 8px;
+      }
+
+      .button-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .price {
+        font-size: 31px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="#"><span class="brand-mark"></span><span>Mura Systems</span></a>
+      <nav class="nav-links">
+        <a href="#solutions">Решения</a>
+        <a href="#telegram">Telegram-боты</a>
+        <a href="#pricing">Стоимость</a>
+        <a href="#process">Процесс</a>
+      </nav>
+      <a class="btn btn-blue" href="https://t.me/muramur32" target="_blank" rel="noopener">Написать</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="pill">Боты, лендинги и автоматизация под ключ</div>
+          <h1>Собираем системы, которые <span>принимают, обрабатывают и доводят заявки до продажи</span></h1>
+          <p class="hero-text">
+            Разрабатываем <strong>Telegram-боты, VK-боты, MAX-боты, лендинги и индивидуальные решения</strong>
+            для малого бизнеса. Помогаем превратить сообщения, переходы и обращения в понятный поток заявок:
+            с уведомлениями, таблицами, статусами, напоминаниями и удобной обработкой клиентов.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-blue" href="https://t.me/muramur32" target="_blank" rel="noopener">Обсудить проект</a>
+            <a class="btn btn-light" href="#telegram">Выбрать тип бота</a>
+          </div>
+          <div class="hero-points">
+            <span class="point">приём и обработка заявок</span>
+            <span class="point">запись клиентов</span>
+            <span class="point">Google Таблицы и статусы</span>
+            <span class="point">разработка под заказ</span>
+          </div>
+        </div>
+
+        <div class="visual" aria-hidden="true">
+          <div class="visual-card">
+            <div class="visual-inner">
+              <div class="stat-row">
+                <div class="stat"><strong>24/7</strong><span>клиенты получают ответ и могут оставить заявку в любое время</span></div>
+                <div class="stat"><strong>1</strong><span>единая система вместо разрозненных переписок и потерянных контактов</span></div>
+              </div>
+
+              <div class="phone">
+                <div class="screen">
+                  <div class="screen-top">
+                    <div class="bot-info">
+                      <div class="avatar"></div>
+                      <div><div class="bot-title">Бот обработки заявок</div><div class="bot-sub">онлайн · помогает клиенту выбрать действие</div></div>
+                    </div>
+                    <div class="online"></div>
+                  </div>
+                  <div class="message primary">Здравствуйте. Подскажите, что вас интересует?</div>
+                  <div class="message">Бот собирает заявку, уточняет детали и передаёт данные владельцу.</div>
+                  <div class="button-grid">
+                    <div class="mini-btn">Записаться</div>
+                    <div class="mini-btn">Каталог</div>
+                    <div class="mini-btn">Стоимость</div>
+                    <div class="mini-btn">Консультация</div>
+                  </div>
+                  <div class="pipeline">
+                    <div class="pipeline-item">заявка приходит администратору</div>
+                    <div class="pipeline-item">данные сохраняются в таблицу</div>
+                    <div class="pipeline-item">клиент получает дальнейшие сообщения</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bottom-panels">
+                <div class="mini-panel">
+                  <div class="mini-label">воронка заявки</div>
+                  <div class="bars">
+                    <div class="bar"><span style="width:92%"></span></div>
+                    <div class="bar"><span style="width:74%"></span></div>
+                    <div class="bar"><span style="width:86%"></span></div>
+                  </div>
+                </div>
+                <div class="mini-panel">
+                  <div class="mini-label">результат</div>
+                  <div class="status">заявка в работе</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="solutions">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Что мы делаем</div>
+            <h2>Проектируем понятные точки входа для заявок, записи и продаж</h2>
+          </div>
+          <p class="section-text">
+            Мы не просто собираем кнопки в мессенджере. Сначала разбираем, как клиент приходит к вам,
+            какие вопросы задаёт, где теряется и что нужно автоматизировать. После этого собираем решение,
+            которое помогает быстрее принимать, обрабатывать и возвращать клиентов.
+          </p>
+        </div>
+
+        <div class="bento">
+          <article class="card large">
+            <div class="card-tag">Telegram</div><div class="symbol"></div>
+            <h3>Telegram-боты как цифровой администратор</h3>
+            <p>Бот встречает клиента, объясняет услуги, собирает заявку, помогает выбрать формат, уведомляет владельца и сохраняет данные в таблицу или CRM.</p>
+            <div class="chips"><span class="chip">запись</span><span class="chip">каталог</span><span class="chip">заявки</span><span class="chip">статусы</span></div>
+          </article>
+
+          <article class="card medium">
+            <div class="card-tag">VK</div><div class="symbol"></div>
+            <h3>VK-боты для сообществ</h3>
+            <p>Автоответы, меню услуг, сбор заявок и первичная обработка клиентов прямо в сообщениях ВК.</p>
+          </article>
+
+          <article class="card medium">
+            <div class="card-tag">MAX</div><div class="symbol"></div>
+            <h3>MAX-боты для нового канала</h3>
+            <p>Помогаем бизнесу принимать заявки и общаться с клиентами там, где появляется новая аудитория.</p>
+          </article>
+
+          <article class="card medium">
+            <div class="card-tag">Landing</div><div class="symbol"></div>
+            <h3>Лендинги под заявку</h3>
+            <p>Одностраничные сайты, которые упаковывают услугу, усиливают доверие и переводят посетителя в заявку.</p>
+          </article>
+
+          <article class="card large">
+            <div class="card-tag">Custom</div><div class="symbol"></div>
+            <h3>Индивидуальные решения под ваш процесс</h3>
+            <p>Если готового сценария мало, собираем систему под задачу: бот, сайт, таблицы, CRM, оплата, личный кабинет, интеграции и нестандартная логика.</p>
+            <div class="chips"><span class="chip">CRM</span><span class="chip">оплата</span><span class="chip">личный кабинет</span><span class="chip">интеграции</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="telegram">
+      <div class="container">
+        <div class="intro-block">
+          <div class="section-head" style="margin-bottom:0">
+            <div>
+              <div class="eyebrow">Линейка Telegram-ботов</div>
+              <h2>4 типа ботов под разные задачи бизнеса</h2>
+            </div>
+            <p class="section-text">
+              Каждый тип можно запустить в формате Start, Business или Max — от простой заявки до полноценной автоматизации с таблицами, CRM, оплатой и повторными касаниями.
+            </p>
+          </div>
+
+          <div class="intro-grid">
+            <div class="intro-item"><strong>Start</strong><span>Быстрый запуск базового сценария: меню, описание, форма заявки и уведомление владельцу.</span></div>
+            <div class="intro-item"><strong>Business</strong><span>Больше порядка: Google Таблицы, статусы, админ-панель, слоты, напоминания и обработка заявок.</span></div>
+            <div class="intro-item"><strong>Max</strong><span>Расширенная автоматизация: CRM, оплата, рассылки, сегментация, аналитика и сложная логика.</span></div>
+          </div>
+        </div>
+
+        <div class="telegram-line bento">
+          <article class="bot-card card large">
+            <div class="bot-head">
+              <div>
+                <div class="card-tag">запись и заявки</div>
+                <h3>Бот записи / заявок</h3>
+                <p>Для мастеров, салонов, барберов, сервисов, репетиторов и консультаций. Помогает клиенту выбрать услугу, дату, время и оставить контакт без лишней переписки.</p>
+              </div>
+              <span class="bot-badge">самый частый старт</span>
+            </div>
+            <div class="tiers">
+              <div class="tier"><strong>Start</strong><span>Форма заявки, услуги, контакты, уведомление владельцу.</span></div>
+              <div class="tier"><strong>Business</strong><span>Свободные слоты, Google Таблица, статусы, админ-панель.</span></div>
+              <div class="tier"><strong>Max</strong><span>CRM, оплата, напоминания, аналитика и сложные сценарии записи.</span></div>
+            </div>
+          </article>
+
+          <article class="bot-card card large">
+            <div class="bot-head">
+              <div>
+                <div class="card-tag">каталог и заказы</div>
+                <h3>Бот-каталог / заказов</h3>
+                <p>Для магазинов, кофеен, пекарен, цветов, доставок и локальных брендов. Показывает товары или услуги, помогает выбрать позицию и оформить заказ.</p>
+              </div>
+              <span class="bot-badge">для продаж</span>
+            </div>
+            <div class="tiers">
+              <div class="tier"><strong>Start</strong><span>Каталог, карточки товаров, кнопка заявки или заказа.</span></div>
+              <div class="tier"><strong>Business</strong><span>Корзина, заказы в таблицу, статусы и уведомления.</span></div>
+              <div class="tier"><strong>Max</strong><span>Оплата, CRM, сегментация клиентов и повторные продажи.</span></div>
+            </div>
+          </article>
+
+          <article class="bot-card card large">
+            <div class="bot-head">
+              <div>
+                <div class="card-tag">отзывы и возврат</div>
+                <h3>Бот отзывов и повторных продаж</h3>
+                <p>Для салонов, кафе, автосервисов, стоматологий, гостиниц и сервисных бизнесов. Помогает собирать обратную связь, возвращать клиентов и работать с базой.</p>
+              </div>
+              <span class="bot-badge">для удержания</span>
+            </div>
+            <div class="tiers">
+              <div class="tier"><strong>Start</strong><span>Сбор отзывов и уведомление владельцу.</span></div>
+              <div class="tier"><strong>Business</strong><span>База клиентов, статусы, таблицы и повторные сообщения.</span></div>
+              <div class="tier"><strong>Max</strong><span>Рассылки, сегментация, триггеры, акции и аналитика.</span></div>
+            </div>
+          </article>
+
+          <article class="bot-card card large">
+            <div class="bot-head">
+              <div>
+                <div class="card-tag">лидмагнит и прогрев</div>
+                <h3>Бот-лидмагнит / прогрева</h3>
+                <p>Для экспертов, онлайн-школ, консультантов, психологов и специалистов. Выдаёт полезный материал, проводит мини-квиз, собирает контакты и подводит к заявке.</p>
+              </div>
+              <span class="bot-badge">для экспертов</span>
+            </div>
+            <div class="tiers">
+              <div class="tier"><strong>Start</strong><span>Выдача материала, простая анкета и сбор контакта.</span></div>
+              <div class="tier"><strong>Business</strong><span>Квиз, прогрев, таблица лидов и уведомления.</span></div>
+              <div class="tier"><strong>Max</strong><span>Автоворонка, цепочки сообщений, сегменты и аналитика.</span></div>
+            </div>
+          </article>
+
+          <article class="bot-card card wide">
+            <div class="bot-head">
+              <div>
+                <div class="card-tag">индивидуальная разработка</div>
+                <h3>Индивидуальный бот или система под заказ</h3>
+                <p>Для нестандартных задач, где нужен свой сценарий: интеграции, личный кабинет, CRM, оплата, роли пользователей, внутренние уведомления, несколько каналов и особая логика под бизнес-процесс.</p>
+              </div>
+              <span class="bot-badge">custom</span>
+            </div>
+            <div class="tiers">
+              <div class="tier"><strong>Проектирование</strong><span>Разбираем задачу, путь клиента и нужные сценарии.</span></div>
+              <div class="tier"><strong>Разработка</strong><span>Собираем интерфейс, логику, интеграции и хранение данных.</span></div>
+              <div class="tier"><strong>Запуск</strong><span>Тестируем, передаём доступы и можем вести поддержку.</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="scenarios">
+      <div class="container">
+        <div class="dark-section">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Готовые связки</div>
+              <h2>Один бизнес-процесс можно собрать в нескольких форматах</h2>
+            </div>
+            <p class="section-text">Например: лендинг приводит клиента, бот обрабатывает заявку, таблица сохраняет данные, а владелец получает уведомление и видит статус обращения.</p>
+          </div>
+
+          <div class="bento">
+            <article class="card small"><div class="card-tag">запись</div><h3>Заявки и запись</h3><p>Для мастеров, салонов, сервисов, консультаций, репетиторов и студий.</p></article>
+            <article class="card small"><div class="card-tag">продажи</div><h3>Каталог и заказы</h3><p>Для магазинов, кофеен, цветов, пекарен, доставок и локальных брендов.</p></article>
+            <article class="card small"><div class="card-tag">возврат</div><h3>Отзывы и повторные продажи</h3><p>Сбор отзывов, работа с базой, акции и возвращение клиентов.</p></article>
+            <article class="card small"><div class="card-tag">прогрев</div><h3>Лидмагнит и квиз</h3><p>Чек-листы, мини-опросы, прогрев аудитории и запись на консультацию.</p></article>
+            <article class="card wide">
+              <div class="card-tag">под ключ</div>
+              <h3>Лендинг + бот + Google Таблица</h3>
+              <p>Лендинг упаковывает предложение и собирает интерес. Бот помогает клиенту сделать следующий шаг. Таблица сохраняет обращения, а владелец получает уведомления и видит статусы.</p>
+              <div class="chips"><span class="chip">сайт</span><span class="chip">бот</span><span class="chip">таблица заявок</span><span class="chip">уведомления</span><span class="chip">статусы</span></div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Стоимость</div>
+            <h2>Можно начать с простого решения и усиливать систему по мере роста</h2>
+          </div>
+          <p class="section-text">Стоимость зависит от сценария, платформы, логики, интеграций и глубины автоматизации. Можно начать с базовой версии и постепенно усилить систему по мере роста задач.</p>
+        </div>
+
+        <div class="pricing">
+          <article class="price-card">
+            <span class="price-label">Start</span>
+            <h3>Быстрый запуск</h3>
+            <div class="price">от 5 000 ₽ <small>простая заявка или базовый бот</small></div>
+            <p class="price-desc">Подходит для быстрого запуска: когда важно как можно скорее начать принимать обращения без лишней сложности и долгой подготовки.</p>
+            <ul class="features"><li>Меню и описание услуг</li><li>Форма заявки</li><li>Уведомление владельцу</li><li>Базовая настройка</li></ul>
+          </article>
+
+          <article class="price-card">
+            <span class="price-label">Business</span>
+            <h3>Заявки и порядок</h3>
+            <div class="price">от 12 500 ₽ <small>бот, таблицы, статусы и уведомления</small></div>
+            <p class="price-desc">Оптимальный вариант для тех, кто хочет не просто собирать заявки, а системно обрабатывать обращения, видеть статусы и держать всё под контролем.</p>
+            <ul class="features"><li>Google Таблицы</li><li>Статусы заявок</li><li>Админ-панель</li><li>Напоминания клиентам</li></ul>
+          </article>
+
+          <article class="price-card">
+            <span class="price-label">Max</span>
+            <h3>Автоматизация</h3>
+            <div class="price">от 25 000 ₽ <small>сложная логика и интеграции</small></div>
+            <p class="price-desc">Решение для бизнеса, которому нужна более глубокая автоматизация: продажи, оплата, CRM, повторные касания и расширенная логика работы с клиентами.</p>
+            <ul class="features"><li>CRM или база клиентов</li><li>Оплата и уведомления</li><li>Рассылки и сегменты</li><li>Расширенная логика</li></ul>
+          </article>
+
+          <article class="price-card">
+            <span class="price-label">Custom</span>
+            <h3>Индивидуально</h3>
+            <div class="price">договорная <small>после короткого брифа</small></div>
+            <p class="price-desc">Формат для нестандартных задач, где нужен индивидуальный сценарий, несколько платформ, особые интеграции или собственная логика под ваш бизнес.</p>
+            <ul class="features"><li>Проектирование сценария</li><li>Несколько каналов</li><li>Интеграции под задачу</li><li>Разработка под бизнес</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Как работаем</div>
+            <h2>Понятный процесс без технического шума и лишней бюрократии</h2>
+          </div>
+          <p class="section-text">Мы берём на себя структуру, сборку и подключение. От вас нужны только вводные, материалы и обратная связь.</p>
+        </div>
+
+        <div class="process">
+          <div class="step"><div class="step-num">01</div><h3>Вы пишете</h3><p>Рассказываете о бизнесе, задаче и желаемом результате.</p></div>
+          <div class="step"><div class="step-num">02</div><h3>Уточняем</h3><p>Разбираем сценарий, нужные функции, платформу и формат запуска.</p></div>
+          <div class="step"><div class="step-num">03</div><h3>Согласуем</h3><p>Фиксируем стоимость, сроки, структуру и состав проекта.</p></div>
+          <div class="step"><div class="step-num">04</div><h3>Собираем</h3><p>Делаем логику, интерфейс, тексты, кнопки и подключения.</p></div>
+          <div class="step"><div class="step-num">05</div><h3>Запускаем</h3><p>Тестируем, передаём доступы и объясняем, как пользоваться.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="cta">
+          <div class="eyebrow">Связаться</div>
+          <h2>Не знаете, какой вариант подойдёт вашему бизнесу?</h2>
+          <p>Напишите в Telegram, коротко расскажите о нише и задаче. Мы подскажем, что лучше выбрать: бот, лендинг, связку под ключ или индивидуальное решение.</p>
+          <div class="cta-actions">
+            <a class="btn btn-blue" href="https://t.me/muramur32" target="_blank" rel="noopener">Написать</a>
+            <a class="btn btn-light" href="#pricing">Посмотреть стоимость</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-line">
+      <div>Mura Systems · Боты, лендинги и автоматизация для малого бизнеса</div>
+      <a href="https://t.me/muramur32" target="_blank" rel="noopener">Связаться в Telegram</a>
+    </div>
+  </footer>
+</body>
+</html>
