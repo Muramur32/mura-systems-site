@@ -6,6 +6,22 @@
   <title>Mura Systems — боты, лендинги и автоматизация для бизнеса</title>
   <meta name="description" content="Telegram-боты, VK-боты, MAX-боты, лендинги и индивидуальные решения для заявок, записи, продаж и автоматизации малого бизнеса.">
 
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+      (function(m,e,t,r,i,k,a){
+          m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();
+          for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+          k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+      })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110289547', 'ym');
+
+      ym(110289547, 'init', {ssr:true, clickmap:true, referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/110289547" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -77,6 +93,8 @@
     .brand-mark:after{content:"";position:absolute;right:8px;bottom:8px;width:13px;height:13px;border-radius:50%;background:var(--ink);border:2px solid rgba(255,255,255,.86)}
     .nav-links{display:flex;gap:24px;color:var(--muted);font-size:14px;font-weight:500}
     .nav-links a:hover{color:var(--ink)}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .nav-actions .btn{min-height:48px;padding:0 20px;font-size:14px}
 
     .btn{
       min-height:54px;display:inline-flex;align-items:center;justify-content:center;padding:0 24px;border-radius:999px;
@@ -341,6 +359,132 @@
     }
     .cta h2{margin:0 auto}.cta p{max-width:740px;margin:20px auto 30px;color:var(--muted);font-size:18px;line-height:1.65;font-weight:500}
     .cta-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+
+
+    .feedback-card{
+      max-width:860px;
+      margin:34px auto 0;
+      padding:28px;
+      border-radius:32px;
+      text-align:left;
+      background:rgba(255,255,255,.74);
+      border:1px solid rgba(23,32,51,.09);
+      box-shadow:0 18px 54px rgba(42,34,22,.08);
+    }
+
+    .feedback-title{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:18px;
+      margin-bottom:22px;
+    }
+
+    .feedback-title h3{
+      font-size:24px;
+      line-height:1.2;
+      margin:0 0 8px;
+      color:var(--ink);
+      font-weight:700;
+    }
+
+    .feedback-title p{
+      margin:0;
+      color:var(--muted);
+      font-size:15.5px;
+      line-height:1.55;
+      font-weight:500;
+    }
+
+    .feedback-badge{
+      flex:0 0 auto;
+      padding:9px 13px;
+      border-radius:999px;
+      color:var(--blue);
+      background:rgba(35,87,255,.09);
+      border:1px solid rgba(35,87,255,.13);
+      font-size:13px;
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    .feedback-form{
+      display:grid;
+      gap:14px;
+    }
+
+    .feedback-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .field label{
+      display:block;
+      margin:0 0 8px;
+      color:var(--soft);
+      font-size:13px;
+      line-height:1.35;
+      font-weight:700;
+    }
+
+    .field input,
+    .field textarea{
+      width:100%;
+      border:1px solid rgba(23,32,51,.12);
+      border-radius:18px;
+      padding:15px 16px;
+      color:var(--ink);
+      background:rgba(255,255,255,.84);
+      outline:none;
+      font:inherit;
+      font-size:15px;
+      line-height:1.45;
+      box-shadow:0 10px 26px rgba(42,34,22,.04);
+      transition:border-color .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .field textarea{
+      min-height:112px;
+      resize:vertical;
+    }
+
+    .field input:focus,
+    .field textarea:focus{
+      border-color:rgba(35,87,255,.42);
+      background:#fff;
+      box-shadow:0 0 0 4px rgba(35,87,255,.08),0 10px 26px rgba(42,34,22,.04);
+    }
+
+    .feedback-bottom{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      margin-top:4px;
+    }
+
+    .feedback-note{
+      max-width:520px;
+      color:var(--muted);
+      font-size:13.5px;
+      line-height:1.45;
+      font-weight:500;
+    }
+
+    .feedback-status{
+      display:none;
+      margin-top:14px;
+      padding:12px 14px;
+      border-radius:16px;
+      color:#1f3a2c;
+      background:rgba(41,156,104,.10);
+      border:1px solid rgba(41,156,104,.18);
+      font-size:14px;
+      line-height:1.45;
+      font-weight:600;
+    }
+
     .footer{padding:34px 0 46px;color:var(--muted);font-size:14px;font-weight:500}
     .footer-line{display:flex;justify-content:space-between;gap:18px;align-items:center;padding-top:24px;border-top:1px solid var(--line)}
 
@@ -349,7 +493,7 @@
       .card.large,.card.medium,.card.small,.card.wide{grid-column:span 6}.process{grid-template-columns:repeat(2,1fr)}.nav-links{display:none}.intro-grid,.tiers{grid-template-columns:1fr}
     }
     @media(max-width:720px){
-      .container{width:min(100% - 26px,var(--max))}.nav{min-height:70px}.brand{font-size:18px}.nav .btn{display:none}
+      .container{width:min(100% - 26px,var(--max))}.nav{min-height:70px}.brand{font-size:18px}.nav .btn,.nav-actions{display:none}
       .hero{padding:52px 0 42px}.hero-grid{gap:34px}
       h1{font-size:clamp(38px,11.2vw,56px);line-height:1.1;letter-spacing:0}.hero-text{font-size:17px}
       .hero-actions,.cta-actions{flex-direction:column}.btn{width:100%}
@@ -362,7 +506,7 @@
       .price-card h3,.price,.price-desc{min-height:auto}
       .card,.price-card,.step,.bot-card{border-radius:24px}.symbol{display:none}.dark-section{margin:18px 0;padding:28px 16px;border-radius:34px}.intro-block{padding:26px 18px}
       .bot-head{display:block}.bot-badge{margin-top:14px}
-      .cta{padding:34px 20px;border-radius:34px}.footer-line{flex-direction:column;align-items:flex-start}
+      .cta{padding:34px 20px;border-radius:34px}.feedback-card{padding:22px 16px;border-radius:26px}.feedback-title{display:block}.feedback-badge{display:inline-flex;margin-top:14px}.feedback-grid{grid-template-columns:1fr}.feedback-bottom{flex-direction:column;align-items:stretch}.feedback-bottom .btn{width:100%}.footer-line{flex-direction:column;align-items:flex-start}
     }
 
     /* Premium typography tuning */
@@ -434,6 +578,7 @@
       }
 
       .nav .btn,
+      .nav-actions,
       .nav-links {
         display: none;
       }
@@ -887,7 +1032,10 @@
         <a href="#pricing">Стоимость</a>
         <a href="#process">Процесс</a>
       </nav>
-      <a class="btn btn-blue" href="https://t.me/muramur32" target="_blank" rel="noopener">Написать</a>
+      <div class="nav-actions">
+        <a class="btn btn-aqua" href="#contact">Оставить заявку</a>
+        <a class="btn btn-blue" href="https://t.me/muramur32" target="_blank" rel="noopener">Написать</a>
+      </div>
     </div>
   </header>
 
@@ -1218,12 +1366,47 @@
     <section id="contact">
       <div class="container">
         <div class="cta">
-          <div class="eyebrow">Связаться</div>
-          <h2>Не знаете, какой вариант подойдёт вашему бизнесу?</h2>
-          <p>Напишите в Telegram, коротко расскажите о нише и задаче. Мы подскажем, что лучше выбрать: бот, лендинг, связку под ключ или индивидуальное решение.</p>
-          <div class="cta-actions">
-            <a class="btn btn-blue" href="https://t.me/muramur32" target="_blank" rel="noopener">Написать</a>
+          <div class="eyebrow">Обратная связь</div>
+          <h2>Оставьте заявку — мы подскажем, какое решение подойдёт</h2>
+          <p>Коротко укажите, как с вами связаться и что заинтересовало. Мы посмотрим задачу и предложим подходящий формат: бот, лендинг, связку под ключ или индивидуальное решение.</p>
+
+          <div class="feedback-card">
+            <div class="feedback-title">
+              <div>
+                <h3>Заявка на консультацию</h3>
+                <p>Заполните несколько полей. Раздел «Что заинтересовало» можно оставить пустым.</p>
+              </div>
+              <div class="feedback-badge">Ответим в Telegram / MAX</div>
+            </div>
+
+            <form class="feedback-form" id="feedbackForm">
+              <div class="feedback-grid">
+                <div class="field">
+                  <label for="clientName">Ваше имя или название компании</label>
+                  <input id="clientName" name="clientName" type="text" placeholder="Например: Анна / студия красоты" autocomplete="name" required>
+                </div>
+                <div class="field">
+                  <label for="clientContact">Контактный номер или ник в Telegram / MAX</label>
+                  <input id="clientContact" name="clientContact" type="text" placeholder="+7... / @username" autocomplete="tel" required>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="clientInterest">Что заинтересовало? <span style="font-weight:500;color:var(--muted)">(по желанию)</span></label>
+                <textarea id="clientInterest" name="clientInterest" placeholder="Например: нужен Telegram-бот для записи клиентов, лендинг или автоматизация заявок"></textarea>
+              </div>
+
+              <div class="feedback-bottom">
+                <div class="feedback-note">После отправки заявка автоматически уйдёт нам в Telegram. Вам ничего дополнительно отправлять не нужно.</div>
+                <button class="btn btn-blue" type="submit">Оставить заявку</button>
+              </div>
+              <div class="feedback-status" id="feedbackStatus">Заявка отправлена. Мы свяжемся с вами в ближайшее время.</div>
+            </form>
+          </div>
+
+          <div class="cta-actions" style="margin-top:24px">
             <a class="btn btn-light" href="#pricing">Посмотреть стоимость</a>
+            <a class="btn btn-light" href="https://t.me/muramur32" target="_blank" rel="noopener">Связаться в Telegram</a>
           </div>
         </div>
       </div>
@@ -1236,5 +1419,84 @@
       <a href="https://t.me/muramur32" target="_blank" rel="noopener">Связаться в Telegram</a>
     </div>
   </footer>
+
+
+  <script>
+    (function(){
+      const form = document.getElementById('feedbackForm');
+      if(!form) return;
+
+      const status = document.getElementById('feedbackStatus');
+      const submitButton = form.querySelector('button[type="submit"]');
+
+      // Сюда нужно вставить ссылку Google Apps Script Web App после публикации обработчика.
+      // Пример ссылки: https://script.google.com/macros/s/AKfycb.../exec
+      const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwbacbWeFz1Tzf41fTqtnxw7pyGiF2DFvP9Hs_qZWuIXmOjFSIQgcfPM_0TeboxLrzg/exec';
+
+      function setStatus(text, type){
+        if(!status) return;
+        status.textContent = text;
+        status.style.display = 'block';
+        if(type === 'error'){
+          status.style.color = '#6b1f1f';
+          status.style.background = 'rgba(196,54,54,.10)';
+          status.style.borderColor = 'rgba(196,54,54,.18)';
+        }else{
+          status.style.color = '#1f3a2c';
+          status.style.background = 'rgba(41,156,104,.10)';
+          status.style.borderColor = 'rgba(41,156,104,.18)';
+        }
+      }
+
+      form.addEventListener('submit', async function(event){
+        event.preventDefault();
+
+        const name = document.getElementById('clientName').value.trim();
+        const contact = document.getElementById('clientContact').value.trim();
+        const interest = document.getElementById('clientInterest').value.trim();
+
+        if(!name || !contact){
+          setStatus('Заполните имя и контакт для связи.', 'error');
+          return;
+        }
+
+        if(!FORM_ENDPOINT || FORM_ENDPOINT.includes('PASTE_GOOGLE_APPS_SCRIPT')){
+          setStatus('Форма почти готова. Нужно подключить ссылку обработчика заявок.', 'error');
+          return;
+        }
+
+        const payload = new FormData();
+        payload.append('clientName', name);
+        payload.append('clientContact', contact);
+        payload.append('clientInterest', interest || 'не указано');
+        payload.append('page', window.location.href);
+        payload.append('createdAt', new Date().toLocaleString('ru-RU'));
+
+        if(submitButton){
+          submitButton.disabled = true;
+          submitButton.textContent = 'Отправляем...';
+        }
+
+        try{
+          await fetch(FORM_ENDPOINT, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: payload
+          });
+
+          form.reset();
+          setStatus('Заявка отправлена. Мы свяжемся с вами в ближайшее время.', 'success');
+        }catch(error){
+          setStatus('Не получилось отправить заявку. Напишите нам в Telegram или попробуйте ещё раз.', 'error');
+        }finally{
+          if(submitButton){
+            submitButton.disabled = false;
+            submitButton.textContent = 'Оставить заявку';
+          }
+        }
+      });
+    })();
+  </script>
+
 </body>
 </html>
