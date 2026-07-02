@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Mura Systems — боты, лендинги и автоматизация для бизнеса</title>
-  <meta name="description" content="Telegram-боты, VK-боты, MAX-боты, лендинги и индивидуальные решения для заявок, записи, продаж и автоматизации малого бизнеса.">
+  <meta name="description" content="Telegram-боты, VK-боты, MAX-боты, лендинги, автоматизация и обучение самостоятельной сборке простого Telegram-бота для бизнеса.">
 
 
   <!-- Yandex.Metrika counter -->
@@ -484,6 +484,190 @@
       line-height:1.45;
       font-weight:600;
     }
+
+
+
+    /* ===== Course / learning section ===== */
+    .course-wrap{
+      position:relative;
+      overflow:hidden;
+      padding:44px;
+      border-radius:48px;
+      background:
+        radial-gradient(circle at 88% 8%,rgba(35,87,255,.16),transparent 30%),
+        radial-gradient(circle at 8% 94%,rgba(63,203,189,.18),transparent 30%),
+        linear-gradient(135deg,rgba(255,255,255,.88),rgba(255,255,255,.58));
+      border:1px solid rgba(23,32,51,.08);
+      box-shadow:var(--shadow);
+    }
+
+    .course-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.08fr) minmax(330px,.92fr);
+      gap:30px;
+      align-items:stretch;
+    }
+
+    .course-card-main{
+      padding:34px;
+      border-radius:34px;
+      background:rgba(255,255,255,.72);
+      border:1px solid rgba(23,32,51,.08);
+    }
+
+    .course-badge-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:18px;
+    }
+
+    .course-badge{
+      min-height:34px;
+      display:inline-flex;
+      align-items:center;
+      padding:0 12px;
+      border-radius:999px;
+      background:rgba(35,87,255,.09);
+      color:var(--blue);
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .course-badge.green{
+      background:rgba(63,203,189,.14);
+      color:#16725f;
+    }
+
+    .course-card-main h3{
+      max-width:760px;
+      font-size:clamp(30px,3.8vw,48px);
+      line-height:1.09;
+      font-weight:650;
+      letter-spacing:0;
+      margin-bottom:18px;
+    }
+
+    .course-lead{
+      max-width:760px;
+      color:var(--muted);
+      font-size:18px;
+      line-height:1.65;
+      font-weight:500;
+      margin-bottom:24px;
+    }
+
+    .course-points{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+      margin:24px 0 28px;
+    }
+
+    .course-point{
+      min-height:50px;
+      display:flex;
+      align-items:center;
+      gap:11px;
+      padding:13px 14px;
+      border-radius:18px;
+      background:rgba(255,255,255,.68);
+      border:1px solid rgba(23,32,51,.08);
+      color:var(--soft);
+      font-size:14.5px;
+      line-height:1.35;
+      font-weight:500;
+    }
+
+    .course-point:before{
+      content:"";
+      flex:0 0 8px;
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--blue);
+    }
+
+    .course-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      align-items:center;
+    }
+
+    .course-note{
+      margin-top:14px;
+      color:var(--muted);
+      font-size:13.5px;
+      line-height:1.5;
+      font-weight:500;
+    }
+
+    .course-side{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+    }
+
+    .course-price-box,
+    .course-result-box{
+      padding:28px;
+      border-radius:30px;
+      background:linear-gradient(180deg,rgba(255,255,255,.86),rgba(255,255,255,.66));
+      border:1px solid rgba(23,32,51,.08);
+      box-shadow:0 16px 48px rgba(42,34,22,.06);
+    }
+
+    .course-price-label{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:12px;
+    }
+
+    .course-price{
+      font-size:42px;
+      line-height:1;
+      font-weight:700;
+      color:var(--ink);
+      margin-bottom:10px;
+    }
+
+    .course-price small{
+      display:block;
+      margin-top:10px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.45;
+      font-weight:500;
+    }
+
+    .course-result-box h4{
+      margin-bottom:12px;
+      font-size:20px;
+      line-height:1.25;
+    }
+
+    .course-result-box p{
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.62;
+      font-weight:500;
+    }
+
+    @media(max-width:860px){
+      .course-wrap{padding:24px 16px;border-radius:30px}
+      .course-grid{grid-template-columns:1fr;gap:14px}
+      .course-card-main,.course-price-box,.course-result-box{padding:22px;border-radius:24px}
+      .course-card-main h3{font-size:clamp(27px,8vw,38px);line-height:1.12}
+      .course-lead{font-size:15.5px;line-height:1.62}
+      .course-points{grid-template-columns:1fr;gap:9px}
+      .course-actions{display:grid;grid-template-columns:1fr;gap:12px}
+      .course-price{font-size:34px}
+    }
+
 
     .footer{padding:34px 0 46px;color:var(--muted);font-size:14px;font-weight:500}
     .footer-line{display:flex;justify-content:space-between;gap:18px;align-items:center;padding-top:24px;border-top:1px solid var(--line)}
@@ -1029,6 +1213,7 @@
       <nav class="nav-links">
         <a href="#solutions">Решения</a>
         <a href="#telegram">Telegram-боты</a>
+        <a href="#learning">Обучение</a>
         <a href="#pricing">Стоимость</a>
         <a href="#process">Процесс</a>
       </nav>
@@ -1297,6 +1482,58 @@
       </div>
     </section>
 
+
+
+    <section id="learning">
+      <div class="container">
+        <div class="course-wrap">
+          <div class="course-grid">
+            <div class="course-card-main">
+              <div class="course-badge-row">
+                <span class="course-badge">Обучение</span>
+                <span class="course-badge green">PDF + практика</span>
+              </div>
+              <h3>Telegram-бот для бизнеса за 1 вечер</h3>
+              <p class="course-lead">
+                Короткий практический курс для тех, кто хочет самостоятельно собрать простого Telegram-бота
+                без программирования: с меню, услугами, ценами, формой заявки и уведомлением владельцу.
+                Подойдет предпринимателям, самозанятым и новичкам, которые хотят сделать первый бот и попробовать предложить такую услугу клиенту.
+              </p>
+              <div class="course-points">
+                <div class="course-point">понятная сборка через BotFather и конструктор</div>
+                <div class="course-point">готовая структура простого бота для бизнеса</div>
+                <div class="course-point">шаблоны текстов, кнопок, заявок и FAQ</div>
+                <div class="course-point">получение файла на email или в Telegram</div>
+              </div>
+              <div class="course-actions">
+                <a class="btn btn-blue" href="https://t.me/mura_systems_course_bot?start=course" target="_blank" rel="noopener">Купить курс</a>
+                <a class="btn btn-light" href="https://t.me/muramur32" target="_blank" rel="noopener">Задать вопрос</a>
+              </div>
+              <div class="course-note">
+                Это самостоятельный формат без консультаций и личной настройки. Если нужен сложный бот с оплатой, CRM, AI или интеграциями — можно заказать разработку отдельно.
+              </div>
+            </div>
+
+            <div class="course-side">
+              <div class="course-price-box">
+                <div class="course-price-label">Стоимость</div>
+                <div class="course-price">1 990 ₽ <small>Доступ к файлу сразу после покупки</small></div>
+                <a class="btn btn-aqua" href="https://t.me/mura_systems_course_bot?start=course" target="_blank" rel="noopener">Перейти к оплате</a>
+              </div>
+              <div class="course-result-box">
+                <h4>Что будет на выходе</h4>
+                <p>
+                  Вы получаете рабочую методичку, по которой сможете собрать своего первого базового бота:
+                  приветствие, меню, разделы, заявку, уведомление владельцу и проверку перед запуском.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
     <section id="pricing">
       <div class="container">
         <div class="section-head">
@@ -1415,7 +1652,10 @@
 
   <footer class="footer">
     <div class="container footer-line">
-      <div>Mura Systems · Боты, лендинги и автоматизация для малого бизнеса</div>
+      <div>
+        <div>Mura Systems · Боты, лендинги и автоматизация для малого бизнеса</div>
+        <div>СЗ Муравьев Владислав Александрович ИНН 325404074992</div>
+      </div>
       <a href="https://t.me/muramur32" target="_blank" rel="noopener">Связаться в Telegram</a>
     </div>
   </footer>
@@ -1431,7 +1671,7 @@
 
       // Сюда нужно вставить ссылку Google Apps Script Web App после публикации обработчика.
       // Пример ссылки: https://script.google.com/macros/s/AKfycb.../exec
-      const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwbacbWeFz1Tzf41fTqtnxw7pyGiF2DFvP9Hs_qZWuIXmOjFSIQgcfPM_0TeboxLrzg/exec';
+      const FORM_ENDPOINT = 'PASTE_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
 
       function setStatus(text, type){
         if(!status) return;
