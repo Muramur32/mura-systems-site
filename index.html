@@ -669,6 +669,55 @@
     }
 
 
+    .purchase-terms{padding:34px 0 10px}
+    .terms-box{
+      padding:28px;
+      border:1px solid var(--line);
+      border-radius:30px;
+      background:rgba(255,255,255,.72);
+      box-shadow:var(--shadow-soft);
+      color:var(--ink);
+    }
+    .terms-box h3{
+      font-size:24px;
+      line-height:1.2;
+      margin-bottom:14px;
+      letter-spacing:-.01em;
+    }
+    .terms-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:14px 22px;
+      margin-top:18px;
+    }
+    .term-item{
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.55;
+      font-weight:500;
+    }
+    .term-item strong{
+      display:block;
+      color:var(--ink);
+      font-size:14px;
+      line-height:1.35;
+      margin-bottom:5px;
+    }
+    .term-note{
+      margin-top:18px;
+      color:var(--muted);
+      font-size:13.5px;
+      line-height:1.55;
+      font-weight:500;
+    }
+    @media(max-width:720px){
+      .purchase-terms{padding:28px 0 4px}
+      .terms-box{padding:22px 18px;border-radius:24px}
+      .terms-grid{grid-template-columns:1fr;gap:12px}
+      .terms-box h3{font-size:22px}
+    }
+
+
     .footer{padding:34px 0 46px;color:var(--muted);font-size:14px;font-weight:500}
     .footer-line{display:flex;justify-content:space-between;gap:18px;align-items:center;padding-top:24px;border-top:1px solid var(--line)}
 
@@ -1503,10 +1552,10 @@
                 <div class="course-point">понятная сборка через BotFather и конструктор</div>
                 <div class="course-point">готовая структура простого бота для бизнеса</div>
                 <div class="course-point">шаблоны текстов, кнопок, заявок и FAQ</div>
-                <div class="course-point">получение файла на email или в Telegram</div>
+                <div class="course-point">получение файла на email после оплаты</div>
               </div>
               <div class="course-actions">
-                <a class="btn btn-blue" href="https://self.payanyway.ru/1783026737293" target="_blank" rel="noopener">Купить курс</a>
+                <a class="btn btn-blue" href="https://api.murasystems.ru/buy" target="_blank" rel="noopener">Купить курс</a>
                 <a class="btn btn-light" href="https://t.me/muramur32" target="_blank" rel="noopener">Задать вопрос</a>
               </div>
               <div class="course-note">
@@ -1518,7 +1567,7 @@
               <div class="course-price-box">
                 <div class="course-price-label">Стоимость</div>
                 <div class="course-price">1 990 ₽ <small>Доступ к файлу сразу после покупки</small></div>
-                <a class="btn btn-aqua" href="https://self.payanyway.ru/1783026737293" target="_blank" rel="noopener">Перейти к оплате</a>
+                <a class="btn btn-aqua" href="https://api.murasystems.ru/buy" target="_blank" rel="noopener">Перейти к оплате</a>
               </div>
               <div class="course-result-box">
                 <h4>Что будет на выходе</h4>
@@ -1649,6 +1698,53 @@
       </div>
     </section>
   </main>
+
+
+  <section class="purchase-terms" id="purchase-terms">
+    <div class="container">
+      <div class="terms-box">
+        <h3>Условия покупки</h3>
+        <div class="terms-grid">
+          <div class="term-item">
+            <strong>Товар</strong>
+            Цифровой обучающий материал — PDF-методичка «Telegram-бот для бизнеса за 1 вечер».
+          </div>
+          <div class="term-item">
+            <strong>Стоимость</strong>
+            1 990 ₽. Цена указана в рублях и является итоговой для покупателя.
+          </div>
+          <div class="term-item">
+            <strong>Порядок оформления заказа</strong>
+            Покупатель нажимает кнопку «Купить курс», указывает email, переходит к оплате и оплачивает заказ онлайн.
+          </div>
+          <div class="term-item">
+            <strong>Оплата</strong>
+            Оплата производится онлайн через платежный сервис PayAnyWay доступными способами оплаты.
+          </div>
+          <div class="term-item">
+            <strong>Получение материала</strong>
+            После подтверждения оплаты PDF-файл отправляется на email, указанный при оформлении заказа. Обычно файл приходит сразу, в отдельных случаях срок отправки может составить до 24 часов.
+          </div>
+          <div class="term-item">
+            <strong>Доставка</strong>
+            Товар является цифровым материалом и передается в электронном виде. Физическая доставка не осуществляется.
+          </div>
+          <div class="term-item">
+            <strong>Возврат</strong>
+            Возврат возможен при ошибочной или повторной оплате, а также если оплаченный материал не был предоставлен покупателю. Для обращения напишите на email или в Telegram.
+          </div>
+          <div class="term-item">
+            <strong>Контакты и продавец</strong>
+            Email: murasystems@yandex.ru<br>
+            Telegram: @muramur32<br>
+            СЗ Муравьев Владислав Александрович<br>
+            ИНН 325404074992
+          </div>
+        </div>
+        <div class="term-note">По вопросам получения файла, оплаты или возврата можно обратиться на murasystems@yandex.ru или в Telegram @muramur32.</div>
+      </div>
+    </div>
+  </section>
 
   <footer class="footer">
     <div class="container footer-line">
