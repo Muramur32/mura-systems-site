@@ -557,6 +557,23 @@
       margin-bottom:24px;
     }
 
+    .course-inside-title{
+      margin:4px 0 16px;
+      color:var(--ink);
+      font-size:22px;
+      line-height:1.25;
+      font-weight:700;
+    }
+
+    .course-inside-text{
+      max-width:760px;
+      margin:0 0 18px;
+      color:var(--muted);
+      font-size:15.5px;
+      line-height:1.58;
+      font-weight:500;
+    }
+
     .course-points{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -1279,10 +1296,10 @@
       <a class="brand" href="#"><span class="brand-mark"></span><span>Mura Systems</span></a>
       <nav class="nav-links">
         <a href="#solutions">Решения</a>
-        <a href="#telegram">Telegram-боты</a>
-        <a href="#learning">Обучение</a>
+        <a href="#telegram">Чат-боты</a>
         <a href="#pricing">Стоимость</a>
         <a href="#process">Процесс</a>
+        <a href="#learning">Обучение</a>
       </nav>
       <div class="nav-actions">
         <a class="btn btn-aqua" href="#contact">Оставить заявку</a>
@@ -1551,57 +1568,6 @@
 
 
 
-    <section id="learning">
-      <div class="container">
-        <div class="course-wrap">
-          <div class="course-grid">
-            <div class="course-card-main">
-              <div class="course-badge-row">
-                <span class="course-badge">Обучение</span>
-                <span class="course-badge green">PDF + практика</span>
-              </div>
-              <h3>Telegram-бот для бизнеса за 1 вечер</h3>
-              <p class="course-lead">
-                Короткий практический курс для тех, кто хочет самостоятельно собрать простого Telegram-бота
-                без программирования: с меню, услугами, ценами, формой заявки и уведомлением владельцу.
-                Подойдет предпринимателям, самозанятым и новичкам, которые хотят сделать первый бот и попробовать предложить такую услугу клиенту.
-              </p>
-              <div class="course-points">
-                <div class="course-point">понятная сборка через BotFather и конструктор</div>
-                <div class="course-point">готовая структура простого бота для бизнеса</div>
-                <div class="course-point">шаблоны текстов, кнопок, заявок и FAQ</div>
-                <div class="course-point">получение файла на email после оплаты</div>
-              </div>
-              <div class="course-actions">
-                <a class="btn btn-blue" href="https://api.murasystems.ru/buy" target="_blank" rel="noopener">Купить курс</a>
-                <a class="btn btn-light" href="https://t.me/muramur32" target="_blank" rel="noopener">Задать вопрос</a>
-              </div>
-              <div class="course-note">
-                Это самостоятельный формат без консультаций и личной настройки. Если нужен сложный бот с оплатой, CRM, AI или интеграциями — можно заказать разработку отдельно.
-              </div>
-            </div>
-
-            <div class="course-side">
-              <div class="course-price-box">
-                <div class="course-price-label">Стоимость</div>
-                <div class="course-price">1 990 ₽ <small>Доступ к файлу сразу после покупки</small></div>
-                <a class="btn btn-aqua" href="https://api.murasystems.ru/buy" target="_blank" rel="noopener">Перейти к оплате</a>
-                <div class="course-vpn-note">Оплата может не работать при включенном VPN. Рекомендуем временно отключить его перед оплатой.</div>
-              </div>
-              <div class="course-result-box">
-                <h4>Что будет на выходе</h4>
-                <p>
-                  Вы получаете рабочую методичку, по которой сможете собрать своего первого базового бота:
-                  приветствие, меню, разделы, заявку, уведомление владельцу и проверку перед запуском.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
     <section id="pricing">
       <div class="container">
         <div class="section-head">
@@ -1716,6 +1682,58 @@
         </div>
       </div>
     </section>
+    <section id="learning">
+      <div class="container">
+        <div class="course-wrap">
+          <div class="course-grid">
+            <div class="course-card-main">
+              <div class="course-badge-row">
+                <span class="course-badge">Обучение</span>
+                <span class="course-badge green">PDF + практика</span>
+              </div>
+              <h3>Telegram-бот для бизнеса за 1 вечер</h3>
+              <p class="course-lead">
+                Практический PDF-курс для тех, кто хочет самостоятельно собрать простого Telegram-бота
+                без программирования: с меню, услугами, ценами, формой заявки и уведомлением владельцу.
+                Подойдет предпринимателям, самозанятым и новичкам, которые хотят сделать первый бот и попробовать предложить такую услугу клиенту.
+              </p>
+              <h4 class="course-inside-title">Внутри курса — 16 разделов</h4>
+              <div class="course-points">
+                <div class="course-point">создание Telegram-бота с нуля</div>
+                <div class="course-point">настройка меню и кнопок</div>
+                <div class="course-point">добавление услуг, цен и FAQ</div>
+                <div class="course-point">сбор заявки от клиента</div>
+                <div class="course-point">готовые примеры текстов</div>
+                <div class="course-point">проверка бота перед запуском</div>
+              </div>
+              <div class="course-actions">
+                <a class="btn btn-blue" href="https://api.murasystems.ru/buy" target="_blank" rel="noopener">Купить курс</a>
+              </div>
+              <div class="course-note">
+                Это самостоятельный формат без консультаций и личной настройки. Если нужен сложный бот с оплатой, CRM, AI или интеграциями — можно заказать разработку отдельно.
+              </div>
+            </div>
+
+            <div class="course-side">
+              <div class="course-price-box">
+                <div class="course-price-label">Стоимость</div>
+                <div class="course-price">1 990 ₽ <small>Доступ к файлу сразу после покупки</small></div>
+                <a class="btn btn-aqua" href="https://api.murasystems.ru/buy" target="_blank" rel="noopener">Перейти к оплате</a>
+                <div class="course-vpn-note">Оплата может не работать при включенном VPN. Рекомендуем временно отключить его перед оплатой.</div>
+              </div>
+              <div class="course-result-box">
+                <h4>Что будет на выходе</h4>
+                <p>
+                  Вы получаете рабочую методичку, по которой сможете собрать своего первого базового бота:
+                  приветствие, меню, разделы, заявку, уведомление владельцу и проверку перед запуском.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
 
@@ -1767,11 +1785,7 @@
 
   <footer class="footer">
     <div class="container footer-line">
-      <div>
-        <div>Mura Systems · Боты, лендинги и автоматизация для малого бизнеса</div>
-        <div>СЗ Муравьев Владислав Александрович ИНН 325404074992</div>
-      </div>
-      <a href="https://t.me/muramur32" target="_blank" rel="noopener">Связаться в Telegram</a>
+      <div>Mura Systems · Боты, лендинги и автоматизация для малого бизнеса</div>
     </div>
   </footer>
 
