@@ -753,6 +753,90 @@
     }
 
 
+
+
+    /* ===== Landing section price highlight ===== */
+    .landing-price-highlight{
+      position:relative;
+      overflow:hidden;
+      margin-top:26px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:22px;
+      padding:28px 28px 26px;
+      border-radius:34px;
+      background:linear-gradient(180deg,rgba(255,255,255,.90),rgba(255,255,255,.74));
+      border:1px solid rgba(23,32,51,.08);
+      box-shadow:0 20px 54px rgba(54,45,32,.08);
+      color:var(--ink);
+    }
+
+    .landing-price-highlight:before{
+      content:"";
+      position:absolute;
+      left:28px;
+      right:28px;
+      top:0;
+      height:3px;
+      border-radius:0 0 999px 999px;
+      background:linear-gradient(90deg,rgba(35,87,255,.20),rgba(63,203,189,.26));
+    }
+
+    .landing-price-copy{
+      max-width:640px;
+    }
+
+    .landing-price-copy strong{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:32px;
+      margin-bottom:14px;
+      padding:0 12px;
+      border-radius:999px;
+      background:rgba(35,87,255,.09);
+      color:var(--blue);
+      font-size:13px;
+      line-height:1;
+      font-weight:600;
+    }
+
+    .landing-price-copy span{
+      display:block;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.58;
+      font-weight:500;
+    }
+
+    .landing-price-value{
+      flex:0 0 auto;
+      font-size:42px;
+      line-height:1.05;
+      font-weight:700;
+      letter-spacing:0;
+      color:var(--ink);
+      white-space:nowrap;
+    }
+
+    @media(max-width:720px){
+      .landing-price-highlight{
+        display:block;
+        padding:24px 22px;
+        border-radius:24px;
+      }
+      .landing-price-highlight:before{
+        left:22px;
+        right:22px;
+      }
+      .landing-price-value{
+        margin-top:18px;
+        font-size:34px;
+        white-space:normal;
+      }
+    }
+
     .footer{padding:34px 0 46px;color:var(--muted);font-size:14px;font-weight:500}
     .footer-line{display:flex;justify-content:space-between;gap:18px;align-items:center;padding-top:24px;border-top:1px solid var(--line)}
 
@@ -1298,6 +1382,7 @@
         <a href="#solutions">Решения</a>
         <a href="#telegram">Чат-боты</a>
         <a href="#pricing">Стоимость</a>
+        <a href="#landings">Лендинги</a>
         <a href="#process">Процесс</a>
         <a href="#learning">Обучение</a>
       </nav>
@@ -1539,35 +1624,6 @@
       </div>
     </section>
 
-    <section id="scenarios">
-      <div class="container">
-        <div class="dark-section">
-          <div class="section-head">
-            <div>
-              <div class="eyebrow">Готовые связки</div>
-              <h2>Один бизнес-процесс можно собрать в нескольких форматах</h2>
-            </div>
-            <p class="section-text">Например: лендинг приводит клиента, бот обрабатывает заявку, таблица сохраняет данные, а владелец получает уведомление и видит статус обращения.</p>
-          </div>
-
-          <div class="bento">
-            <article class="card small"><div class="card-tag">запись</div><h3>Заявки и запись</h3><p>Для мастеров, салонов, сервисов, консультаций, репетиторов и студий.</p></article>
-            <article class="card small"><div class="card-tag">продажи</div><h3>Каталог и заказы</h3><p>Для магазинов, кофеен, цветов, пекарен, доставок и локальных брендов.</p></article>
-            <article class="card small"><div class="card-tag">возврат</div><h3>Отзывы и повторные продажи</h3><p>Сбор отзывов, работа с базой, акции и возвращение клиентов.</p></article>
-            <article class="card small"><div class="card-tag">прогрев</div><h3>Лидмагнит и квиз</h3><p>Чек-листы, мини-опросы, прогрев аудитории и запись на консультацию.</p></article>
-            <article class="card wide">
-              <div class="card-tag">под ключ</div>
-              <h3>Лендинг + бот + Google Таблица</h3>
-              <p>Лендинг упаковывает предложение и собирает интерес. Бот помогает клиенту сделать следующий шаг. Таблица сохраняет обращения, а владелец получает уведомления и видит статусы.</p>
-              <div class="chips"><span class="chip">сайт</span><span class="chip">бот</span><span class="chip">таблица заявок</span><span class="chip">уведомления</span><span class="chip">статусы</span></div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
     <section id="pricing">
       <div class="container">
         <div class="section-head">
@@ -1613,6 +1669,154 @@
         </div>
       </div>
     </section>
+
+
+    <section id="landings">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Лендинги</div>
+            <h2>Лендинги для заявок, рекламы и понятной упаковки услуги</h2>
+          </div>
+          <p class="section-text">
+            Лендинг нужен, когда клиенту важно быстро понять: что вы предлагаете, сколько это стоит,
+            какие есть условия и как оставить заявку. Его можно использовать в рекламе, соцсетях,
+            QR-кодах, рассылках и сообщениях клиентам.
+          </p>
+        </div>
+
+        <div class="bento">
+          <article class="card wide">
+            <div class="card-tag">точка входа</div>
+            <h3>Одностраничный сайт, который помогает довести клиента до действия</h3>
+            <p>
+              Мы собираем лендинги под услуги, продукты, мероприятия, базы отдыха, экспертов и локальный бизнес.
+              Задача такой страницы — не просто красиво выглядеть, а объяснить предложение, закрыть частые вопросы
+              и привести человека к заявке, звонку, оплате или переходу в мессенджер.
+            </p>
+            <div class="landing-price-highlight">
+              <div class="landing-price-copy">
+                <strong>Стоимость лендинга</strong>
+                <span>Итоговая цена зависит от объема страницы, количества блоков, формы заявки, аналитики и связок с ботом или таблицей.</span>
+              </div>
+              <div class="landing-price-value">от 10 000 ₽</div>
+            </div>
+            <div class="chips">
+              <span class="chip">заявки</span><span class="chip">реклама</span><span class="chip">услуги</span><span class="chip">продукты</span><span class="chip">локальный бизнес</span>
+            </div>
+          </article>
+
+          <article class="card medium">
+            <div class="card-tag">структура</div>
+            <h3>Что может быть внутри</h3>
+            <p>Описание предложения, преимущества, цены, тарифы, фото, примеры работ, кейсы, ответы на частые вопросы и понятный призыв к действию.</p>
+          </article>
+
+          <article class="card medium">
+            <div class="card-tag">заявка</div>
+            <h3>Форма или кнопка связи</h3>
+            <p>Клиент может оставить заявку, перейти в Telegram или WhatsApp, позвонить, открыть оплату или попасть в сценарий бота.</p>
+          </article>
+
+          <article class="card medium">
+            <div class="card-tag">аналитика</div>
+            <h3>Метрика и цели</h3>
+            <p>Подключаем Яндекс Метрику и цели, чтобы было понятно, откуда приходят люди и какие действия они совершают на странице.</p>
+          </article>
+
+          <article class="card wide">
+            <div class="card-tag">связка</div>
+            <h3>Лендинг можно сразу связать с ботом и таблицей заявок</h3>
+            <p>
+              Лендинг объясняет предложение, бот помогает клиенту сделать следующий шаг, а таблица сохраняет данные
+              и помогает владельцу видеть обращения в удобном формате. В итоге получается не просто страница,
+              а понятная система для приема и обработки заявок.
+            </p>
+            <div class="chips">
+              <span class="chip">лендинг</span><span class="chip">Telegram-бот</span><span class="chip">таблица заявок</span><span class="chip">уведомления</span><span class="chip">аналитика</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="scenarios">
+      <div class="container">
+        <div class="dark-section">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">под ключ</div>
+              <h2>Готовые связки</h2>
+            </div>
+            <p class="section-text">
+              Не всегда бизнесу нужен только бот или только лендинг. Часто лучше работает связка:
+              страница объясняет предложение, бот помогает оставить заявку, а таблица сохраняет данные
+              и помогает держать обращения под контролем.
+            </p>
+          </div>
+
+          <div class="bento">
+            <article class="card large">
+              <div class="card-tag">лендинг + заявка</div>
+              <h3>Для запуска рекламы и сбора обращений</h3>
+              <p>
+                Подходит, когда нужно быстро упаковать одну услугу, акцию или предложение. Лендинг объясняет,
+                что вы продаете, показывает цены, условия, фото, преимущества и ведет человека к конкретному действию:
+                оставить заявку, написать в мессенджер или перейти к консультации.
+              </p>
+              <div class="chips"><span class="chip">лендинг</span><span class="chip">форма заявки</span><span class="chip">кнопка связи</span><span class="chip">Метрика</span></div>
+            </article>
+
+            <article class="card large">
+              <div class="card-tag">лендинг + бот</div>
+              <h3>Для более удобного пути клиента после перехода</h3>
+              <p>
+                Страница прогревает клиента и отвечает на базовые вопросы, а бот помогает сделать следующий шаг:
+                выбрать услугу, оставить контакт, уточнить детали или получить нужный материал. Так клиент не просто
+                попадает в пустой чат, а идет по понятному сценарию.
+              </p>
+              <div class="chips"><span class="chip">страница</span><span class="chip">сценарий в боте</span><span class="chip">заявка</span><span class="chip">уведомление</span></div>
+            </article>
+
+            <article class="card large">
+              <div class="card-tag">бот + таблица</div>
+              <h3>Для порядка в заявках и контроля обработки</h3>
+              <p>
+                Бот собирает данные клиента, а таблица сохраняет их в одном месте: имя, контакт, услугу, дату,
+                комментарий, источник и статус. Это удобно, когда заявок становится больше и важно видеть,
+                кто уже обработан, а кто еще ждет ответа.
+              </p>
+              <div class="chips"><span class="chip">Telegram-бот</span><span class="chip">Google Таблица</span><span class="chip">статусы</span><span class="chip">контроль</span></div>
+            </article>
+
+            <article class="card large">
+              <div class="card-tag">лендинг + бот + оплата</div>
+              <h3>Для курсов, материалов, консультаций и цифровых продуктов</h3>
+              <p>
+                Лендинг объясняет продукт и закрывает основные вопросы, кнопка ведет к оплате, а после покупки
+                клиент получает материал или дальнейшую инструкцию. Такой формат подходит для PDF, мини-курсов,
+                чек-листов, консультаций и других простых онлайн-продуктов.
+              </p>
+              <div class="chips"><span class="chip">продукт</span><span class="chip">оплата</span><span class="chip">выдача материала</span><span class="chip">email</span></div>
+            </article>
+
+            <article class="card wide">
+              <div class="card-tag">лендинг + бот + таблица</div>
+              <h3>Для полноценной системы приема и обработки заявок</h3>
+              <p>
+                Это самая универсальная связка для малого бизнеса. Реклама, соцсети или QR-код ведут человека на лендинг.
+                Лендинг понятно объясняет предложение. Бот помогает выбрать нужное действие и оставить заявку.
+                Таблица сохраняет обращение, а владелец получает уведомление и может дальше работать с клиентом уже без хаоса.
+              </p>
+              <div class="chips">
+                <span class="chip">лендинг</span><span class="chip">бот</span><span class="chip">таблица заявок</span><span class="chip">уведомления</span><span class="chip">статусы</span><span class="chip">аналитика</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <section id="process">
       <div class="container">
@@ -1676,12 +1880,14 @@
           </div>
 
           <div class="cta-actions" style="margin-top:24px">
-            <a class="btn btn-light" href="#pricing">Посмотреть стоимость</a>
             <a class="btn btn-light" href="https://t.me/muramur32" target="_blank" rel="noopener">Связаться в Telegram</a>
           </div>
         </div>
       </div>
     </section>
+
+
+    
     <section id="learning">
       <div class="container">
         <div class="course-wrap">
