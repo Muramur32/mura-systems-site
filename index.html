@@ -1371,6 +1371,412 @@
       }
     }
 
+    /* ===== Portfolio / ready projects section ===== */
+    .portfolio-wrap{
+      position:relative;
+      overflow:hidden;
+      padding:44px;
+      border-radius:48px;
+      background:
+        radial-gradient(circle at 88% 12%,rgba(35,87,255,.13),transparent 30%),
+        radial-gradient(circle at 8% 88%,rgba(63,203,189,.15),transparent 30%),
+        linear-gradient(135deg,rgba(255,255,255,.88),rgba(255,255,255,.58));
+      border:1px solid rgba(23,32,51,.08);
+      box-shadow:var(--shadow);
+    }
+
+    .portfolio-block{
+      margin-top:30px;
+    }
+
+    .portfolio-block:first-of-type{
+      margin-top:0;
+    }
+
+    .portfolio-subhead{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:24px;
+      margin:0 0 18px;
+    }
+
+    .portfolio-subhead h3{
+      font-size:28px;
+      line-height:1.16;
+      font-weight:650;
+      color:var(--ink);
+    }
+
+    .portfolio-subhead span{
+      max-width:420px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.55;
+      font-weight:500;
+    }
+
+    .portfolio-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+
+    .portfolio-grid.bot-grid{
+      grid-template-columns:repeat(4,1fr);
+    }
+
+    .work-card{
+      min-height:520px;
+      display:flex;
+      flex-direction:column;
+      overflow:hidden;
+      border-radius:34px;
+      background:rgba(255,255,255,.76);
+      border:1px solid rgba(23,32,51,.08);
+      box-shadow:0 18px 54px rgba(42,34,22,.07);
+      transition:.22s ease;
+    }
+
+    .work-card:hover{
+      transform:translateY(-4px);
+      background:rgba(255,255,255,.92);
+      border-color:rgba(23,32,51,.15);
+      box-shadow:0 28px 74px rgba(42,34,22,.10);
+    }
+
+    .work-card.compact{
+      min-height:420px;
+    }
+
+    .site-preview-link,
+    .bot-preview-link{
+      display:block;
+      padding:16px 16px 0;
+    }
+
+    .site-thumb{
+      position:relative;
+      height:255px;
+      overflow:hidden;
+      border-radius:26px;
+      background:
+        radial-gradient(circle at 78% 18%,rgba(63,203,189,.18),transparent 28%),
+        radial-gradient(circle at 12% 88%,rgba(35,87,255,.14),transparent 30%),
+        linear-gradient(145deg,#fdfaf3,#edf4ff);
+      border:1px solid rgba(23,32,51,.09);
+      box-shadow:0 18px 46px rgba(23,32,51,.08);
+    }
+
+    .site-thumb:before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:0;
+      right:0;
+      height:34px;
+      z-index:2;
+      background:rgba(255,255,255,.82);
+      border-bottom:1px solid rgba(23,32,51,.08);
+      backdrop-filter:blur(12px);
+    }
+
+    .site-thumb:after{
+      content:"";
+      position:absolute;
+      left:16px;
+      top:13px;
+      z-index:3;
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:rgba(23,32,51,.22);
+      box-shadow:14px 0 rgba(23,32,51,.16),28px 0 rgba(23,32,51,.12);
+    }
+
+    .site-thumb iframe{
+      position:absolute;
+      left:50%;
+      top:34px;
+      width:1440px;
+      height:980px;
+      border:0;
+      transform:translateX(-50%) scale(.205);
+      transform-origin:top center;
+      pointer-events:none;
+      background:white;
+    }
+
+    .site-thumb-label{
+      position:absolute;
+      right:14px;
+      bottom:14px;
+      z-index:4;
+      min-height:32px;
+      display:inline-flex;
+      align-items:center;
+      padding:0 12px;
+      border-radius:999px;
+      color:var(--ink);
+      background:rgba(255,255,255,.84);
+      border:1px solid rgba(23,32,51,.10);
+      font-size:12.5px;
+      line-height:1;
+      font-weight:700;
+      backdrop-filter:blur(14px);
+      box-shadow:0 12px 30px rgba(23,32,51,.08);
+    }
+
+    .telegram-thumb{
+      position:relative;
+      min-height:210px;
+      overflow:hidden;
+      padding:16px;
+      border-radius:26px;
+      background:
+        radial-gradient(circle at 88% 8%,rgba(35,87,255,.16),transparent 34%),
+        radial-gradient(circle at 12% 90%,rgba(63,203,189,.18),transparent 34%),
+        linear-gradient(145deg,#fdfaf3,#edf4ff);
+      border:1px solid rgba(23,32,51,.09);
+      box-shadow:0 18px 46px rgba(23,32,51,.08);
+    }
+
+    .telegram-window{
+      min-height:178px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      padding:14px;
+      border-radius:22px;
+      background:rgba(255,255,255,.78);
+      border:1px solid rgba(23,32,51,.08);
+      box-shadow:0 14px 34px rgba(23,32,51,.06);
+    }
+
+    .telegram-top{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .telegram-avatar{
+      width:40px;
+      height:40px;
+      flex:0 0 40px;
+      display:grid;
+      place-items:center;
+      border-radius:15px;
+      color:white;
+      background:linear-gradient(135deg,var(--blue),var(--aqua));
+      box-shadow:0 12px 26px rgba(35,87,255,.16);
+      font-size:18px;
+      font-weight:800;
+    }
+
+    .telegram-name{
+      min-width:0;
+      display:flex;
+      align-items:center;
+    }
+
+    .telegram-name strong{
+      display:block;
+      overflow:hidden;
+      text-overflow:ellipsis;
+      white-space:nowrap;
+      color:var(--ink);
+      font-size:14px;
+      line-height:1.2;
+      font-weight:750;
+    }
+
+    .telegram-name span{
+      display:block;
+      margin-top:3px;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.2;
+      font-weight:600;
+    }
+
+    .telegram-message{
+      max-width:92%;
+      padding:11px 12px;
+      border-radius:16px 16px 16px 5px;
+      color:var(--soft);
+      background:#fff;
+      border:1px solid rgba(23,32,51,.08);
+      font-size:12.5px;
+      line-height:1.42;
+      font-weight:500;
+    }
+
+    .telegram-buttons{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+      margin-top:auto;
+    }
+
+    .telegram-button{
+      min-height:34px;
+      display:grid;
+      place-items:center;
+      border-radius:12px;
+      color:var(--blue);
+      background:rgba(35,87,255,.08);
+      border:1px solid rgba(35,87,255,.09);
+      font-size:12px;
+      line-height:1;
+      font-weight:700;
+    }
+
+    .work-body{
+      display:flex;
+      flex-direction:column;
+      flex:1;
+      padding:24px 26px 26px;
+    }
+
+    .compact .work-body{
+      padding:22px 22px 24px;
+    }
+
+    .work-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:18px;
+    }
+
+    .work-type,
+    .work-status{
+      min-height:30px;
+      display:inline-flex;
+      align-items:center;
+      padding:0 10px;
+      border-radius:999px;
+      font-size:12.5px;
+      font-weight:700;
+    }
+
+    .work-type{
+      color:var(--blue);
+      background:rgba(35,87,255,.09);
+    }
+
+    .work-status{
+      color:#16725f;
+      background:rgba(63,203,189,.14);
+    }
+
+    .work-body h3{
+      max-width:560px;
+      font-size:26px;
+      line-height:1.14;
+      font-weight:650;
+      margin-bottom:12px;
+      color:var(--ink);
+    }
+
+    .compact .work-body h3{
+      font-size:21px;
+      line-height:1.18;
+    }
+
+    .work-body p{
+      color:var(--muted);
+      font-size:15.5px;
+      line-height:1.62;
+      font-weight:500;
+    }
+
+    .compact .work-body p{
+      font-size:14.5px;
+      line-height:1.55;
+    }
+
+    .work-list{
+      list-style:none;
+      display:grid;
+      gap:8px;
+      margin-top:18px;
+    }
+
+    .work-list li{
+      display:flex;
+      gap:9px;
+      color:var(--soft);
+      font-size:14px;
+      line-height:1.42;
+      font-weight:500;
+    }
+
+    .work-list li:before{
+      content:"";
+      flex:0 0 7px;
+      width:7px;
+      height:7px;
+      margin-top:7px;
+      border-radius:50%;
+      background:var(--blue);
+    }
+
+    .project-link{
+      width:max-content;
+      max-width:100%;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top:auto;
+      padding-top:22px;
+      color:var(--blue);
+      font-size:15px;
+      line-height:1.35;
+      font-weight:700;
+    }
+
+    .project-link:after{
+      content:"→";
+      transition:.2s ease;
+    }
+
+    .project-link:hover:after{
+      transform:translateX(3px);
+    }
+
+    @media(max-width:1060px){
+      .portfolio-grid,
+      .portfolio-grid.bot-grid{grid-template-columns:1fr 1fr}
+      .site-thumb iframe{transform:translateX(-50%) scale(.22)}
+    }
+
+    @media(max-width:720px){
+      .portfolio-wrap{padding:24px 16px;border-radius:30px}
+      .portfolio-block{margin-top:26px}
+      .portfolio-subhead{display:block;margin-bottom:14px}
+      .portfolio-subhead h3{font-size:24px}
+      .portfolio-subhead span{display:block;margin-top:8px;font-size:14.5px}
+      .portfolio-grid,
+      .portfolio-grid.bot-grid{grid-template-columns:1fr;gap:14px}
+      .work-card,.work-card.compact{min-height:auto;border-radius:24px}
+      .site-preview-link,.bot-preview-link{padding:12px 12px 0}
+      .site-thumb{height:210px;border-radius:20px}
+      .site-thumb iframe{width:1180px;height:820px;transform:translateX(-50%) scale(.19)}
+      .telegram-thumb{min-height:192px;padding:12px;border-radius:20px}
+      .telegram-window{min-height:168px;border-radius:18px}
+      .work-body,.compact .work-body{padding:22px}
+      .work-body h3,.compact .work-body h3{font-size:23px}
+      .project-link{width:100%;padding-top:20px}
+    }
+
+    @media(max-width:390px){
+      .site-thumb{height:190px}
+      .site-thumb iframe{transform:translateX(-50%) scale(.165)}
+      .telegram-buttons{grid-template-columns:1fr}
+    }
+
+
   </style>
 </head>
 
@@ -1383,6 +1789,7 @@
         <a href="#telegram">Чат-боты</a>
         <a href="#pricing">Стоимость</a>
         <a href="#landings">Лендинги</a>
+        <a href="#portfolio">Проекты</a>
         <a href="#process">Процесс</a>
         <a href="#learning">Обучение</a>
       </nav>
@@ -1817,6 +2224,166 @@
       </div>
     </section>
 
+    <section id="portfolio">
+      <div class="container">
+        <div class="portfolio-wrap">
+          <div class="section-head">
+            <div>
+              <div class="eyebrow">Готовые проекты</div>
+              <h2>Лендинги и Telegram-боты, которые можно открыть вживую</h2>
+            </div>
+          </div>
+
+          <div class="portfolio-block">
+            <div class="portfolio-subhead">
+              <h3>Лендинги</h3>
+              <span>В карточке видно мини-превью сайта, а по ссылке открывается опубликованная рабочая страница.</span>
+            </div>
+
+            <div class="portfolio-grid">
+              <article class="work-card">
+                <a class="site-preview-link" href="https://muramur32.github.io/pizza-smolensk/" target="_blank" rel="noopener" aria-label="Открыть лендинг пиццерии в Смоленске">
+                  <div class="site-thumb">
+                    <iframe src="https://muramur32.github.io/pizza-smolensk/" title="Мини-превью лендинга пиццерии в Смоленске" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+                    <span class="site-thumb-label">живое превью</span>
+                  </div>
+                </a>
+                <div class="work-body">
+                  <div class="work-meta"><span class="work-type">Лендинг</span><span class="work-status">доставка еды</span></div>
+                  <h3>Лендинг для пиццерии в Смоленске</h3>
+                  <p>
+                    Одностраничный сайт для локальной доставки: аккуратная главная, понятная упаковка предложения,
+                    быстрые переходы к заказу и структура, которую можно адаптировать под кафе, пекарню или доставку еды.
+                  </p>
+                  <ul class="work-list">
+                    <li>визуальная подача продукта с акцентом на заказ</li>
+                    <li>структура под мобильный трафик и рекламу</li>
+                    <li>переход на рабочий опубликованный лендинг</li>
+                  </ul>
+                  <a class="project-link" href="https://muramur32.github.io/pizza-smolensk/" target="_blank" rel="noopener">Открыть лендинг</a>
+                </div>
+              </article>
+
+              <article class="work-card">
+                <a class="site-preview-link" href="https://muramur32.github.io/flowers-smolensk/" target="_blank" rel="noopener" aria-label="Открыть лендинг цветов в Смоленске">
+                  <div class="site-thumb">
+                    <iframe src="https://muramur32.github.io/flowers-smolensk/" title="Мини-превью лендинга цветов в Смоленске" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+                    <span class="site-thumb-label">живое превью</span>
+                  </div>
+                </a>
+                <div class="work-body">
+                  <div class="work-meta"><span class="work-type">Лендинг</span><span class="work-status">цветы и букеты</span></div>
+                  <h3>Лендинг для магазина цветов в Смоленске</h3>
+                  <p>
+                    Нежная посадочная страница для цветочного проекта: крупный визуальный первый экран,
+                    блоки с букетами, преимуществами и понятным маршрутом пользователя к заявке или заказу.
+                  </p>
+                  <ul class="work-list">
+                    <li>эстетичная упаковка под эмоциональную покупку</li>
+                    <li>адаптация под смартфоны и быстрый просмотр</li>
+                    <li>переход на рабочий опубликованный лендинг</li>
+                  </ul>
+                  <a class="project-link" href="https://muramur32.github.io/flowers-smolensk/" target="_blank" rel="noopener">Открыть лендинг</a>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="portfolio-block">
+            <div class="portfolio-subhead">
+              <h3>Telegram-боты</h3>
+              <span>Для ботов вместо сайта показываем мини-превью интерфейса: аватар, короткий сценарий и быстрые действия.</span>
+            </div>
+
+            <div class="portfolio-grid bot-grid">
+              <article class="work-card compact">
+                <a class="bot-preview-link" href="https://t.me/murasystems_bot" target="_blank" rel="noopener" aria-label="Открыть Telegram-бот Mura Systems">
+                  <div class="telegram-thumb">
+                    <div class="telegram-window">
+                      <div class="telegram-top">
+                        <div class="telegram-avatar">M</div>
+                        <div class="telegram-name"><strong>Mura Systems Bot</strong></div>
+                      </div>
+                      <div class="telegram-message">Помогает выбрать решение и оставить заявку на разработку.</div>
+                      <div class="telegram-buttons"><span class="telegram-button">Боты</span><span class="telegram-button">Лендинги</span></div>
+                    </div>
+                  </div>
+                </a>
+                <div class="work-body">
+                  <div class="work-meta"><span class="work-type">Telegram-бот</span><span class="work-status">заявки</span></div>
+                  <h3>Бот Mura Systems</h3>
+                  <p>Основной бот для знакомства с услугами, выбора направления и отправки заявки.</p>
+                  <a class="project-link" href="https://t.me/murasystems_bot" target="_blank" rel="noopener">Открыть в Telegram</a>
+                </div>
+              </article>
+
+              <article class="work-card compact">
+                <a class="bot-preview-link" href="https://t.me/mura_flowers_demo_bot" target="_blank" rel="noopener" aria-label="Открыть Telegram-бот для цветочного магазина">
+                  <div class="telegram-thumb">
+                    <div class="telegram-window">
+                      <div class="telegram-top">
+                        <div class="telegram-avatar">F</div>
+                        <div class="telegram-name"><strong>Flowers Demo Bot</strong></div>
+                      </div>
+                      <div class="telegram-message">Демо-сценарий для цветочного магазина: букеты, заявки и контакт клиента.</div>
+                      <div class="telegram-buttons"><span class="telegram-button">Каталог</span><span class="telegram-button">Заказ</span></div>
+                    </div>
+                  </div>
+                </a>
+                <div class="work-body">
+                  <div class="work-meta"><span class="work-type">Telegram-бот</span><span class="work-status">каталог</span></div>
+                  <h3>Бот для магазина цветов</h3>
+                  <p>Демо-бот под цветочный бизнес: показывает варианты, помогает выбрать букет и оставить заказ.</p>
+                  <a class="project-link" href="https://t.me/mura_flowers_demo_bot" target="_blank" rel="noopener">Открыть в Telegram</a>
+                </div>
+              </article>
+
+              <article class="work-card compact">
+                <a class="bot-preview-link" href="https://t.me/nail_studio_anna_bot" target="_blank" rel="noopener" aria-label="Открыть Telegram-бот для nail-студии">
+                  <div class="telegram-thumb">
+                    <div class="telegram-window">
+                      <div class="telegram-top">
+                        <div class="telegram-avatar">N</div>
+                        <div class="telegram-name"><strong>Nail Studio Anna</strong></div>
+                      </div>
+                      <div class="telegram-message">Демо-запись для студии: услуги, свободное время и заявка мастеру.</div>
+                      <div class="telegram-buttons"><span class="telegram-button">Услуги</span><span class="telegram-button">Запись</span></div>
+                    </div>
+                  </div>
+                </a>
+                <div class="work-body">
+                  <div class="work-meta"><span class="work-type">Telegram-бот</span><span class="work-status">запись</span></div>
+                  <h3>Бот для nail-студии</h3>
+                  <p>Демо-бот для записи клиентов: услуги, выбор формата и передача заявки администратору.</p>
+                  <a class="project-link" href="https://t.me/nail_studio_anna_bot" target="_blank" rel="noopener">Открыть в Telegram</a>
+                </div>
+              </article>
+
+              <article class="work-card compact">
+                <a class="bot-preview-link" href="https://t.me/ChartAnalysisCryptoBot" target="_blank" rel="noopener" aria-label="Открыть Telegram-бот для анализа криптографиков">
+                  <div class="telegram-thumb">
+                    <div class="telegram-window">
+                      <div class="telegram-top">
+                        <div class="telegram-avatar">C</div>
+                        <div class="telegram-name"><strong>Crypto Market Analyst</strong></div>
+                      </div>
+                      <div class="telegram-message">Бот разбирает криптопары и показывает результат анализа в Telegram.</div>
+                      <div class="telegram-buttons"><span class="telegram-button">Анализ</span><span class="telegram-button">Scalp</span></div>
+                    </div>
+                  </div>
+                </a>
+                <div class="work-body">
+                  <div class="work-meta"><span class="work-type">Telegram-бот</span><span class="work-status">аналитика</span></div>
+                  <h3>Бот анализа криптографиков</h3>
+                  <p>Рабочий бот для быстрого разбора криптопар с отдельными сценариями анализа.</p>
+                  <a class="project-link" href="https://t.me/ChartAnalysisCryptoBot" target="_blank" rel="noopener">Открыть в Telegram</a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section id="process">
       <div class="container">
@@ -1854,7 +2421,7 @@
               <div class="feedback-badge">Ответим в Telegram / MAX</div>
             </div>
 
-            <form class="feedback-form" id="feedbackForm">
+            <form class="feedback-form" id="feedbackForm" action="https://script.google.com/macros/s/AKfycbwbacbWeFz1Tzf41fTqtnxw7pyGiF2DFvP9Hs_qZWuIXmOjFSIQgcfPM_0TeboxLrzg/exec" method="post">
               <div class="feedback-grid">
                 <div class="field">
                   <label for="clientName">Ваше имя или название компании</label>
@@ -1880,6 +2447,7 @@
           </div>
 
           <div class="cta-actions" style="margin-top:24px">
+            <a class="btn btn-light" href="#pricing">Посмотреть стоимость</a>
             <a class="btn btn-light" href="https://t.me/muramur32" target="_blank" rel="noopener">Связаться в Telegram</a>
           </div>
         </div>
@@ -2033,8 +2601,8 @@
           return;
         }
 
-        if(!FORM_ENDPOINT || FORM_ENDPOINT.includes('PASTE_GOOGLE_APPS_SCRIPT')){
-          setStatus('Форма почти готова. Нужно подключить ссылку обработчика заявок.', 'error');
+        if(!FORM_ENDPOINT){
+          setStatus('Не указан обработчик формы. Напишите нам в Telegram или попробуйте позже.', 'error');
           return;
         }
 
