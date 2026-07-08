@@ -1422,6 +1422,10 @@
       gap:18px;
     }
 
+    .portfolio-grid.landing-grid{
+      grid-template-columns:repeat(3,1fr);
+    }
+
     .portfolio-grid.bot-grid{
       grid-template-columns:repeat(4,1fr);
     }
@@ -1747,6 +1751,7 @@
 
     @media(max-width:1060px){
       .portfolio-grid,
+      .portfolio-grid.landing-grid,
       .portfolio-grid.bot-grid{grid-template-columns:1fr 1fr}
       .site-thumb iframe{transform:translateX(-50%) scale(.22)}
     }
@@ -1758,6 +1763,7 @@
       .portfolio-subhead h3{font-size:24px}
       .portfolio-subhead span{display:block;margin-top:8px;font-size:14.5px}
       .portfolio-grid,
+      .portfolio-grid.landing-grid,
       .portfolio-grid.bot-grid{grid-template-columns:1fr;gap:14px}
       .work-card,.work-card.compact{min-height:auto;border-radius:24px}
       .site-preview-link,.bot-preview-link{padding:12px 12px 0}
@@ -2240,7 +2246,7 @@
               <span>В карточке видно мини-превью сайта, а по ссылке открывается опубликованная рабочая страница.</span>
             </div>
 
-            <div class="portfolio-grid">
+            <div class="portfolio-grid landing-grid">
               <article class="work-card">
                 <a class="site-preview-link" href="https://muramur32.github.io/pizza-smolensk/" target="_blank" rel="noopener" aria-label="Открыть лендинг пиццерии в Смоленске">
                   <div class="site-thumb">
@@ -2284,6 +2290,29 @@
                     <li>переход на рабочий опубликованный лендинг</li>
                   </ul>
                   <a class="project-link" href="https://muramur32.github.io/flowers-smolensk/" target="_blank" rel="noopener">Открыть лендинг</a>
+                </div>
+              </article>
+
+              <article class="work-card">
+                <a class="site-preview-link" href="https://muramur32.github.io/dom-u-lesa/" target="_blank" rel="noopener" aria-label="Открыть лендинг загородного дома у леса">
+                  <div class="site-thumb">
+                    <iframe src="https://muramur32.github.io/dom-u-lesa/" title="Мини-превью лендинга загородного дома у леса" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+                    <span class="site-thumb-label">живое превью</span>
+                  </div>
+                </a>
+                <div class="work-body">
+                  <div class="work-meta"><span class="work-type">Лендинг</span><span class="work-status">загородный отдых</span></div>
+                  <h3>Лендинг для дома у леса</h3>
+                  <p>
+                    Атмосферная посадочная страница для загородного объекта: первый экран с настроением,
+                    понятная подача формата отдыха, преимущества, условия и переход к заявке или бронированию.
+                  </p>
+                  <ul class="work-list">
+                    <li>визуальная упаковка под аренду и отдых за городом</li>
+                    <li>структура для рекламы, соцсетей и прямых переходов</li>
+                    <li>переход на рабочий опубликованный лендинг</li>
+                  </ul>
+                  <a class="project-link" href="https://muramur32.github.io/dom-u-lesa/" target="_blank" rel="noopener">Открыть лендинг</a>
                 </div>
               </article>
             </div>
